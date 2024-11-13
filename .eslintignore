@@ -1,0 +1,14 @@
+**/*site*
+**/*types*
+!.*.js
+# build files
+es
+esm
+lib
+dist
+typings
+
+*.md
+node_modules
+
+./*js
