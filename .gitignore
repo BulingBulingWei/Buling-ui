@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-
-# **/*site*
 **/*types*
 !.*.js
 # build files
@@ -32,7 +30,5 @@ es
 esm
 lib
 typings
-
 *.md
-
 ./*js

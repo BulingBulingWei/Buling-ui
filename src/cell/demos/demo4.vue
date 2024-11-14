@@ -1,10 +1,3 @@
-<!--
- * @Author: BulingBulingWei
- * @Date: 2024-11-14 21:12:05
- * @LastEditors: BulingBulingWei
- * @LastEditTime: 2024-11-14 23:46:13
- * @Description: 
--->
 <template>
   <div class="cell-wrap">
     <BuCellGroup>
