@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 
-**/*site*
+# **/*site*
 **/*types*
 !.*.js
 # build files

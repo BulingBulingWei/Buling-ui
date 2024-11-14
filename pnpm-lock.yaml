@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@buling-ui-icon':
+        specifier: link:..\buling-ui-icon
+        version: link:../buling-ui-icon
       '@vueuse/core':
         specifier: ^11.2.0
         version: 11.2.0(vue@3.5.12(typescript@5.6.3))
-      buling-ui-icon:
-        specifier: link:..\buling-ui-icon
-        version: link:../buling-ui-icon
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13

@@ -1,4 +1,112 @@
+/*
+ * @Author: BulingBulingWei
+ * @Date: 2024-11-14 00:48:05
+ * @LastEditors: BulingBulingWei
+ * @LastEditTime: 2024-11-14 23:16:33
+ * @Description: 
+ */
 @import './mixin.less';
 
 .@{prefix}-cell {
+  padding: var(--bu-cell-vertical-padding) var(--bu-cell-horizontal-padding);
+  background: var(--bu-cell-bg-color);
+  position: relative;
+
+  // cell 组件内徽标的样式要覆盖
+  --bu-badge-content-right: 0px;
+  --bu-badge-content-top: 0px;
+  --bu-badge-number-content-top: 0px;
+  --bu-badge-number-content-right: 0px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__left {
+    &:not(:empty) {
+      margin-right: var(--bu-cell-left-gap);
+      display: flex;
+      align-items: center;
+    }
+
+    &-image {
+      width: var(--bu-cell-image-size);
+      height: var(--bu-cell-image-size);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &--required {
+    color: var(--bu-font-color-important);
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-size: var(--bu-cell-title-font-size);
+    color: var(--bu-cell-title-color);
+    line-height: 1.25;
+    font-weight: 500;
+
+    & + .@{prefix}-cell__description:not(:empty) {
+      margin-top: var(--bu-cell-description-gap);
+    }
+  }
+
+  &__description {
+    font-size: var(--bu-cell-description-font-size);
+    line-height: 1.5;
+    color: var(--bu-cell-description-color);
+  }
+
+  &__note {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: var(--bu-cell-note-font-size);
+    color: var(--bu-cell-note-color);
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    font-size: var(--bu-cell-right-font-size);
+
+    &:not(:empty) {
+      margin-left: var(--bu-cell-right-gap);
+    }
+  }
+}
+.@{prefix}-cell-group {
+  .@{prefix}-cell {
+    &:not(:nth-last-child(1))::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - var(--bu-cell-horizontal-padding) * 2);
+      height: 2px;
+      transform: scaleY(0.5);
+      background-color: var(--bu-cell-group-divider-color);
+      z-index: 1;
+    }
+  }
+
+  &--card {
+    border-radius: var(--bu-cell-border-radius);
+    overflow: hidden;
+  }
 }
