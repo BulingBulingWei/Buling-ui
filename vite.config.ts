@@ -19,7 +19,7 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       // 忽略打包三方库
-      external: ['vue', 'nanoid', 'smoothscroll-polyfill', 'buling-ui-icon', 'swiper/vue', 'swiper/modules', 'dayjs', '@vueuse/core', 'lodash-es'],
+      external: ['vue', 'nanoid', 'smoothscroll-polyfill', '@buling-ui-icon', 'swiper/vue', 'swiper/modules', 'dayjs', '@vueuse/core', 'lodash-es'],
       input: ['src/index.ts'],
       output: {
         format: 'es',
@@ -42,7 +42,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolvePath('./src'),
-      'buling-ui-icon': resolvePath('../buling-ui-icon/src/index.ts'),
+      '@buling-ui-icon': resolvePath('../buling-ui-icon/src/index.ts'),
       'buling-ui': resolvePath('./src/index.ts')
     },
     extensions: ['.js', '.ts', '.vue', '.css', '.less']
