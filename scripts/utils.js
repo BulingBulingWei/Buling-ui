@@ -5,7 +5,7 @@ export const resolve = (s, base = path.dirname('')) => path.resolve(base, s)
 
 export const firstUpperCase = (comp) => comp[0].toLocaleUpperCase() + comp.slice(1)
 
-export const FilterCompName = ['styles', 'utils', 'hooks', 'icon']
+export const FilterCompName = ['styles', 'utils', 'hooks', 'icon', 'assets']
 
 /**
  * 获取src路径下所有组件名
@@ -32,7 +32,11 @@ export const getPropsInfoFromFile = (comp) => {
   const temp = [...typeMd.matchAll(reg)]
   if (temp.length > 0) {
     const propsMd = temp[0][0]
-    const propsRow = [...propsMd.matchAll(/\/\*\*\s*\n\s*\*\s*([\s\S]*?)\s*\n\s*\*\s*@default:\s*([\s\S]*?)\s*\n\s*\*\/\s*\n\s*([\s\S\?]*?):\s*([\s\S]*?)\n/g)]
+    const propsRow = [
+      ...propsMd.matchAll(
+        /\/\*\*\s*\n\s*\*\s*([\s\S]*?)\s*\n\s*\*\s*@default:\s*([\s\S]*?)\s*\n\s*\*\/\s*\n\s*([\s\S\?]*?):\s*([\s\S]*?)\n/g
+      )
+    ]
 
     const ans = []
     propsRow.forEach((prop) => {
