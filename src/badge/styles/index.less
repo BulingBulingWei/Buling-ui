@@ -1,0 +1,46 @@
+@import "./mixin.less";
+
+.@{prefix}-badge {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__dot {
+    width: var(--bu-badge-dot-size);
+    height: var(--bu-badge-dot-size);
+    border-radius: 50%;
+    background: var(--bu-badge-bg-color);
+    right: 0;
+    top: 0;
+  }
+
+  &__content {
+    white-space: nowrap;
+    padding: 0 6px;
+    height: var(--bu-badge-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--bu-badge-content-min-width);
+    text-align: center;
+    font-weight: var(--bu-badge-font-weight);
+    font-size: var(--bu-badge-font-size);
+    font-family: var(--bu-badge-font-family);
+    color: var(--bu-badge-color);
+    background: var(--bu-badge-bg-color);
+    border-radius: var(--bu-badge-content-border-radius);
+    position: absolute;
+    top: var(--bu-badge-content-top);
+    right: var(--bu-badge-content-right);
+
+    &-border {
+      border: 1px solid var(--bu-badge-border-color);
+    }
+  }
+}
