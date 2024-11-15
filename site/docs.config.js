@@ -75,6 +75,12 @@ export default [
         name: 'avatar',
         path: '/components/avatar',
         component: () => import('@/avatar/avatar.md')
+      },
+      {
+        title: 'Badge 徽标',
+        name: 'badge',
+        path: '/components/badge',
+        component: () => import('@/badge/badge.md')
       }
     ]
   },
