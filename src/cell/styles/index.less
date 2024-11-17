@@ -45,6 +45,9 @@
     }
   }
 
+  &__content {
+  }
+
   &--required {
     color: var(--bu-font-color-important);
   }
@@ -74,11 +77,18 @@
     justify-content: flex-end;
     font-size: var(--bu-cell-note-font-size);
     color: var(--bu-cell-note-color);
+    
+    &:not(:empty) {
+      margin-left: var(--bu-cell-right-gap);
+    }
   }
 
   &__badge {
     display: flex;
     align-items: center;
+    &:not(:empty) {
+      margin-left: var(--bu-cell-right-gap);
+    }
   }
 
   &__right {
