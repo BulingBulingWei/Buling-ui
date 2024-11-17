@@ -45,6 +45,12 @@ export default [
         name: 'button',
         path: '/components/button',
         component: () => import('@/button/button.md')
+      },
+      {
+        title: 'Sticky 吸顶容器',
+        name: 'sticky',
+        path: '/components/sticky',
+        component: () => import('@/sticky/sticky.md')
       }
     ]
   },
