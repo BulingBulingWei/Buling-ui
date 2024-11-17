@@ -45,14 +45,6 @@ export default [
         name: 'button',
         path: '/components/button',
         component: () => import('@/button/button.md')
-      },
-
-      ,
-      {
-        title: 'Cell 单元格',
-        name: 'cell',
-        path: '/components/cell',
-        component: () => import('@/cell/cell.md')
       }
     ]
   },
@@ -81,6 +73,12 @@ export default [
         name: 'badge',
         path: '/components/badge',
         component: () => import('@/badge/badge.md')
+      },
+      {
+        title: 'Cell 单元格',
+        name: 'cell',
+        path: '/components/cell',
+        component: () => import('@/cell/cell.md')
       }
     ]
   },
