@@ -28,9 +28,10 @@
         </slot>
       </div>
 
-      <!-- 小红点 -->
-      <!-- todo: 待实现 badge -->
-      <div v-if="computedBadgeProps" :class="`${name}__badge`">.</div>
+      <!-- badge -->
+      <div v-if="computedBadgeProps" :class="`${name}__badge`">
+        <Badge v-bind="computedBadgeProps"></Badge>
+      </div>
 
       <!-- 右侧内容：箭头 -->
       <div :class="`${name}__right`">
@@ -45,7 +46,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { AngleRightIcon } from '@buling-ui-icon'
-
+import Badge from '@/badge'
 import CellProps from './types'
 import config from '../config'
 
