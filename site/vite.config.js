@@ -20,7 +20,7 @@ export default ({ mode }) => {
     },
     server: {
       host: '127.0.0.1',
-      port: 18000,
+      port: 3000,
       open: '/',
       https: false
     },

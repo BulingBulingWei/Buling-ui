@@ -85,6 +85,12 @@ export default [
         name: 'cell',
         path: '/components/cell',
         component: () => import('@/cell/cell.md')
+      },
+      {
+        title: 'Empty 空状态',
+        name: 'empty',
+        path: '/components/empty',
+        component: () => import('@/empty/empty.md')
       }
     ]
   },

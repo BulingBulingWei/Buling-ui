@@ -3,3 +3,4 @@ export { default as BuCell, CellGroup as BuCellGroup, type CellProps } from './c
 export { default as BuAvatar, type AvatarProps } from './avatar'
 export { default as BuBadge, type BadgeProps } from './badge'
 export { default as BuSticky, type StickyProps } from './sticky'
+export { default as BuEmpty, type EmptyProps } from './empty'
