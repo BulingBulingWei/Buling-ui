@@ -2,23 +2,29 @@
   <t-header class="doc-header">
     <div class="doc-icon">
       <img src="../assets/crown.png" />
-      <h1>Vue3组件库</h1>
+      <h1>Buling Ui</h1>
     </div>
     <div class="doc-top-action">
-      <!-- <t-switch size="large" @change="">
-        </t-switch> -->
+      <ThemeSelector></ThemeSelector>
     </div>
   </t-header>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import ThemeSelector from './theme-select.vue'
+</script>
 
 <style lang="less" scoped>
 .doc-header {
-  height: 64px !important;
+  position: relative;
+  top: 0;
+  left: -260px;
+  width: 100vw !important;
+  height: var(--header-height);
   box-sizing: border-box;
   display: flex;
-  box-shadow: rgb(231, 231, 231) 0px -1px 0px 0px inset;
+  justify-content: space-between;
+  box-shadow: var(--header-box-shadow);
 
   .doc-icon {
     height: 100%;
@@ -38,5 +44,12 @@
       color: #888;
     }
   }
+}
+
+.doc-top-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
 }
 </style>

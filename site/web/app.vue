@@ -1,22 +1,9 @@
 <template>
-  <t-layout>
+  <td-doc-layout>
     <doc-header />
-    <t-layout>
-      <t-aside class="doc-aside" width="260px">
-        <t-menu class="doc-menu" :value="currentPath" width="260px">
-          <template v-for="(menu, index) in docsMap">
-            <div v-if="menu.children.length" class="doc-menu-title">{{ menu.title }}</div>
-            <template v-for="item in menu.children">
-              <t-menu-item :value="item.path" @click="clickHandler(menu.type, item.path)">{{ item.title }}</t-menu-item>
-            </template>
-          </template>
-        </t-menu>
-      </t-aside>
-      <t-content style="background-color: #fff">
-        <router-view :style="contentStyle" @loaded="contentLoaded" />
-      </t-content>
-    </t-layout>
-  </t-layout>
+    <td-doc-aside ref="docAside" title="Vue3 comps for Mobile"> </td-doc-aside>
+    <router-view :style="contentStyle" @loaded="contentLoaded" />
+  </td-doc-layout>
 </template>
 
 <script setup>
@@ -29,6 +16,7 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const currentPath = ref()
+const docAside = ref()
 
 const docs = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''))
 
@@ -66,21 +54,10 @@ const contentStyle = computed(() => {
   return { visibility: loaded.value ? 'visible' : 'hidden' }
 })
 
-onMounted(() => {
-  watchHtmlMode(changeIframeMode)
-})
-
-watch(
-  () => route.path,
-  () => {
-    currentPath.value = route.path
-  }
-)
-
-const clickHandler = (type, path) => {
-  if (route.path === path) return
+const clickHandler = ({ detail }) => {
+  if (route.path === detail) return
   loaded.value = false
-  router.push({ path })
+  router.push({ path: detail })
   currentPath.value = route.path
   window.scrollTo(0, 0)
 }
@@ -91,6 +68,19 @@ const contentLoaded = (callback) => {
     callback()
   })
 }
+
+onMounted(() => {
+  docAside.value.routerList = docsMap
+  docAside.value.onchange = clickHandler
+  watchHtmlMode(changeIframeMode)
+})
+
+watch(
+  () => route.path,
+  () => {
+    currentPath.value = route.path
+  }
+)
 </script>
 
 <style lang="less">

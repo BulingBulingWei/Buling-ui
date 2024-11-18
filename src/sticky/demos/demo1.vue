@@ -40,7 +40,6 @@ const scrollHandler = (scrollTop: number, fixed: boolean) => {
 <style lang="less" scoped>
 .sticky-wrap {
   margin: 24px;
-  background-color: #fff;
   height: 40vh;
 
   button {
