@@ -1,0 +1,23 @@
+@import './mixin.less';
+
+.@{prefix}-overlay {
+  position: fixed;
+  top: var(--bu-overlay-top);
+  left: var(--bu-overlay-left);
+  right: var(--bu-overlay-right);
+  bottom: var(--bu-overlay-bottom);
+  width: 100%;
+  z-index: var(--bu-overlay-zindex);
+  background-color: var(--bu-overlay-bg-color);
+  overflow: hidden;
+
+  &-enter-from,
+  &-leave-to {
+    background-color: transparent;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: background-color var(--bu-overlay-duration) ease;
+  }
+}

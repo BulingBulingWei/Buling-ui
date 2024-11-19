@@ -18,13 +18,17 @@ import ThemeSelector from './theme-select.vue'
 .doc-header {
   position: relative;
   top: 0;
-  left: -260px;
+  left: 0;
   width: 100vw !important;
   height: var(--header-height);
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   box-shadow: var(--header-box-shadow);
+
+  @media (min-width: 1200px) {
+    left: -260px;
+  }
 
   .doc-icon {
     height: 100%;
