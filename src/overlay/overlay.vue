@@ -48,25 +48,25 @@ const customStyles = computed(() => {
   const style: Record<string, any> = {}
 
   if (isNotNil(props.zIndex)) {
-    style['z-index'] = props.zIndex
+    style['--bu-overlay-zindex'] = props.zIndex
   }
   if (isNotNil(props.duration)) {
-    style['transition-duration'] = props.duration + 'ms'
+    style['--bu-overlay-duration'] = props.duration + 'ms'
   }
   if (props.background) {
     style['--bu-overlay-bg-color'] = `${props.background}`
   }
   if (isNotNil(props.top)) {
-    style['top'] = props.top
+    style['--bu-overlay-top'] = props.top
   }
   if (isNotNil(props.bottom)) {
-    style['bottom'] = props.bottom
+    style['--bu-overlay-bottom'] = props.bottom
   }
   if (isNotNil(props.left)) {
-    style['left'] = props.left
+    style['--bu-overlay-left'] = props.left
   }
   if (isNotNil(props.right)) {
-    style['right'] = props.right
+    style['--bu-overlay-right'] = props.right
   }
   return style
 })

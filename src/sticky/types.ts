@@ -13,7 +13,7 @@ export interface TStickyProps {
   offsetTop?: number | string
   /**
    * z-index值
-   * @default: 1000
+   * @default: 800
    */
   zIndex?: number
 }
@@ -38,6 +38,6 @@ export default {
    */
   zIndex: {
     type: Number,
-    default: 1000
+    default: 800
   }
 }

@@ -1,4 +1,158 @@
 @import './mixin.less';
 
 .@{prefix}-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: var(--bu-popup-zindex);
+  display: flex;
+  /* 设置这个值后，临近的滚动区域不会被滚动链影响到，比如对话框后方的页面不会滚动。 */
+  overscroll-behavior: none;
+  overflow: hidden;
+
+  &-left__wrap {
+    flex-direction: row;
+  }
+
+  &-right__wrap {
+    flex-direction: row-reverse;
+  }
+
+  &-top__wrap {
+    flex-direction: column;
+  }
+
+  &-bottom__wrap {
+    flex-direction: column-reverse;
+  }
+
+  &-center__wrap {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    background: var(--bu-popup-content-bg-color);
+    overflow: hidden;
+  }
+
+  &-left {
+    border-radius: 0 var(--bu-popup-border-radius) var(--bu-popup-border-radius) 0;
+
+    &-enter-from,
+    &-leave-to {
+      transform: translateX(-100%);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: transform var(--bu-overlay-duration) ease-in-out;
+    }
+  }
+
+  &-right {
+    border-radius: var(--bu-popup-border-radius) 0 0 var(--bu-popup-border-radius);
+
+    &-enter-from,
+    &-leave-to {
+      transform: translateX(100%);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: transform var(--bu-overlay-duration) ease-in-out;
+    }
+  }
+
+  &-top {
+    border-radius: 0 0 var(--bu-popup-border-radius) var(--bu-popup-border-radius);
+
+    &-enter-from,
+    &-leave-to {
+      transform: translateY(-100%);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: transform var(--bu-overlay-duration) ease-in-out;
+    }
+  }
+
+  &-bottom {
+    border-radius: var(--bu-popup-border-radius) var(--bu-popup-border-radius) 0 0;
+
+    &-enter-from,
+    &-leave-to {
+      transform: translateY(100%);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: transform var(--bu-overlay-duration) ease-in-out;
+    }
+  }
+
+  &-center {
+    border-radius: var(--bu-popup-border-radius);
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: transform var(--bu-overlay-duration) ease-in-out;
+    }
+  }
+
+  //   这段代码的目的是确保在有底部安全区域（如 iPhone X 及以上型号的刘海屏）的设备上，
+  //   页面内容不会被屏幕底部的圆角或 Home 指示条遮挡，通过添加适当的底部内边距来避免这个问题。
+  &--safe-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.@{prefix}-popup {
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    height: var(--bu-popup-toolbar-height);
+    background: var(--bu-popup-toolbar-bg-color);
+    box-sizing: border-box;
+    font-size: var(--bu-popup-toolbar-font-size);
+  }
+
+  &__cancel,
+  &__confirm {
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__cancel {
+    color: var(--bu-popup-toolbar-cancel-color);
+    justify-content: flex-start;
+  }
+
+  &__confirm {
+    color: var(--bu-popup-toolbar-confirm-color);
+    justify-content: flex-end;
+  }
+
+  &__title {
+    flex: 1;
+    padding: var(--bu-popup-toolbar-title-padding);
+    font-weight: var(--bu-popup-toolbar-title-font-weight);
+    font-size: var(--bu-popup-toolbar-title-font-size);
+    text-align: center;
+    line-height: var(--bu-popup-toolbar-height);
+  }
 }
