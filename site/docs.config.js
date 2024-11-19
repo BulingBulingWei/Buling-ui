@@ -62,7 +62,14 @@ export default [
   {
     title: '输入',
     type: 'component',
-    children: []
+    children: [
+      {
+        title: 'Picker 选择器',
+        name: 'picker',
+        path: '/components/picker',
+        component: () => import('@/picker/picker.md')
+      }
+    ]
   },
   {
     title: '数据展示',
