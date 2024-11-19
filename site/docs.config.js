@@ -104,6 +104,19 @@ export default [
   {
     title: '反馈',
     type: 'component', // 组件文档
-    children: []
+    children: [
+      {
+        title: 'Popup 弹出层',
+        name: 'popup',
+        path: '/components/popup',
+        component: () => import('@/popup/popup.md')
+      },
+      {
+        title: 'Overlay 遮罩层',
+        name: 'overlay',
+        path: '/components/overlay',
+        component: () => import('@/overlay/overlay.md')
+      }
+    ]
   }
 ]
