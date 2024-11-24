@@ -9,6 +9,7 @@
           @before-leave="(el) => touchEmits('close', el)"
           @after-leave="(el) => touchEmits('closed', el)"
         >
+          <!-- TODO: v-if -->
           <div
             v-show="show"
             :class="contentClass"
