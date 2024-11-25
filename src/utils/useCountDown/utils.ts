@@ -56,14 +56,20 @@ export const fillZero = (num: number, isMillieconds = false): string | number =>
  * @param type
  * @returns
  */
-export const getMark = (format: string, type: string): string => format?.split?.(type)?.[1]?.split?.('')?.[0]
+export const getMark = (format: string, type: string): string =>
+  format?.split?.(type)?.[1]?.split?.('')?.[0]
 
 /**
  * getShowTimes
  * @param time
  * @returns
  */
-export const getShowTimes = (times: TimeData, format: string, millisecond = false, splitWithUnit = false): TUseCountDownShowTimes => {
+export const getShowTimes = (
+  times: TimeData,
+  format: string,
+  millisecond = false,
+  splitWithUnit = false
+): TUseCountDownShowTimes => {
   format = (format || 'DD:HH:mm:ss')?.toUpperCase?.()
   millisecond && !format.includes(':SSS') && (format = format.concat(':SSS'))
   const showTimes: TUseCountDownShowTimes = []
@@ -106,9 +112,14 @@ export const getShowTimes = (times: TimeData, format: string, millisecond = fals
  * @return {Promise<number>}
  */
 export const getScreenFps = (() => {
-  const { requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame } = window as any
+  const { requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame } =
+    window as any
   // 先做一下兼容性处理
-  const nextFrame = [requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame]?.find?.((fn) => fn)
+  const nextFrame = [
+    requestAnimationFrame,
+    mozRequestAnimationFrame,
+    webkitRequestAnimationFrame
+  ]?.find?.((fn) => fn)
   //
   if (!nextFrame) {
     console.error('requestAnimationFrame is not supported!')

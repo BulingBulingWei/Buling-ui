@@ -8,7 +8,12 @@
           <BuSwitch v-model="text" size="small"></BuSwitch>
         </template>
       </BuCell>
-      <BuCell title="单行标题" description="辅助文案辅助文案辅助文案" note="辅助说明" arrow></BuCell>
+      <BuCell
+        title="单行标题"
+        description="辅助文案辅助文案辅助文案"
+        note="辅助说明"
+        arrow
+      ></BuCell>
       <BuCell title="带图标" arrow>
         <template #left>
           <PictureIcon color="var(--bu-theme-color)" size="0.48rem" />

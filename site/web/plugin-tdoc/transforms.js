@@ -17,7 +17,10 @@ export default {
     const { data } = matter(source)
     // 统一换成 common 文档内容
     if (fileName && source.includes(':: BASE_DOC ::')) {
-      const docPath = path.resolve(__dirname, `../../../src/${data.isHook ? 'hooks/' : ''}${componentName}/docs/demo.md`)
+      const docPath = path.resolve(
+        __dirname,
+        `../../../src/${data.isHook ? 'hooks/' : ''}${componentName}/docs/demo.md`
+      )
 
       let baseDoc = ''
       if (fs.existsSync(docPath)) {
@@ -43,7 +46,9 @@ export default {
     source.replace(/:::\s*demo\s+([\\/.\w-]+)/g, (demoStr, relativeDemoPath) => {
       const demoPathOnlyLetters = relativeDemoPath.replace(/[^a-zA-Z\d]/g, '')
       const demoCodeDefName = `Demo${demoPathOnlyLetters}Code`
-      demoCodesImports[demoCodeDefName] = `import ${demoCodeDefName} from './${relativeDemoPath}.vue?raw';`
+      demoCodesImports[
+        demoCodeDefName
+      ] = `import ${demoCodeDefName} from './${relativeDemoPath}.vue?raw';`
     })
 
     return source

@@ -75,9 +75,15 @@ const createCompFiles = (compInfo) => {
     // comp/types.ts
     fs.writeFileSync(resolve('./types.ts', compPath), TemplateGenerator.typesTemplate(compInfo))
     // comp/comp.vue
-    fs.writeFileSync(resolve(`./${compInfo.compName}.vue`, compPath), TemplateGenerator.compTemplate(compInfo))
+    fs.writeFileSync(
+      resolve(`./${compInfo.compName}.vue`, compPath),
+      TemplateGenerator.compTemplate(compInfo)
+    )
     // comp/comp.md
-    fs.writeFileSync(resolve(`./${compInfo.compName}.md`, compPath), TemplateGenerator.compMdTemplate(compInfo))
+    fs.writeFileSync(
+      resolve(`./${compInfo.compName}.md`, compPath),
+      TemplateGenerator.compMdTemplate(compInfo)
+    )
 
     // comp/demos
     const demosPath = resolve('./demos', compPath)
@@ -86,7 +92,10 @@ const createCompFiles = (compInfo) => {
     // demos/demo1.vue
     fs.writeFileSync(resolve('./demo1.vue', demosPath), TemplateGenerator.demoTemplate(compInfo))
     // demos/mobile.vue
-    fs.writeFileSync(resolve('./mobile.vue', demosPath), TemplateGenerator.mobileDemoTemplate(compInfo))
+    fs.writeFileSync(
+      resolve('./mobile.vue', demosPath),
+      TemplateGenerator.mobileDemoTemplate(compInfo)
+    )
 
     // comp/docs
     const docsPath = resolve('./docs', compPath)
@@ -105,7 +114,10 @@ const createCompFiles = (compInfo) => {
     fs.writeFileSync(resolve('./mixin.less', stylesPath), TemplateGenerator.mixinStyleTemplate())
 
     // styles/index.less
-    fs.writeFileSync(resolve('./index.less', stylesPath), TemplateGenerator.indexStyleTemplate(compInfo))
+    fs.writeFileSync(
+      resolve('./index.less', stylesPath),
+      TemplateGenerator.indexStyleTemplate(compInfo)
+    )
 
     prettierWrite(compPath)
   } catch (error) {
@@ -124,7 +136,9 @@ const insertComponent = (compInfo) => {
 
   const componentPath = resolve('./src/components.ts')
   const raw = fs.readFileSync(componentPath).toString()
-  const newContent = raw + `export { default as Bu${compInfo.compUpperName}, type ${compInfo.compUpperName}Props } from './${compInfo.compName}'\n`
+  const newContent =
+    raw +
+    `export { default as Bu${compInfo.compUpperName}, type ${compInfo.compUpperName}Props } from './${compInfo.compName}'\n`
 
   fs.writeFile(componentPath, newContent, (err) => {
     if (err) {

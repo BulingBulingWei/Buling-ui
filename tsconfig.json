@@ -10,38 +10,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "declaration": true,
     "declarationDir": "./lib",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "buling-ui": [
-        "src/index.ts"
-      ],
-      "@buling-ui-icon": [
-        "../buling-ui-icon/src/index.ts"
-      ]
+      "@/*": ["src/*"],
+      "buling-ui": ["src/index.ts"],
+      "@buling-ui-icon": ["../buling-ui-icon/src/index.ts"]
     }
   },
   "rules": {
     "trailing-comma": false
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "src/**/*.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib ",
-    "site"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.js"],
+  "exclude": ["node_modules", "lib ", "site"],
   "compileOnSave": false
 }

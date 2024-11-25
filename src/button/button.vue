@@ -1,5 +1,11 @@
 <template>
-  <button :class="buttonClass" role="button" :aria-disabled="disabled" :style="{ width }" @click="onClick">
+  <button
+    :class="buttonClass"
+    role="button"
+    :aria-disabled="disabled"
+    :style="{ width }"
+    @click="onClick"
+  >
     <div :class="`${name}__icon`">
       <slot name="icon">
         <img v-if="iconSrc" :src="iconSrc" alt="/" />

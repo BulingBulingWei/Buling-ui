@@ -31,7 +31,9 @@
         </template>
         <template #description>
           <div class="cell-desc">
-            <span>500个布丁，每个账号限领1次500个布丁，每个账号限领1次500个布丁，每个账号限领1次</span>
+            <span
+              >500个布丁，每个账号限领1次500个布丁，每个账号限领1次500个布丁，每个账号限领1次</span
+            >
           </div>
         </template>
         <template #bottom>

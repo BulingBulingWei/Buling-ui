@@ -13,8 +13,8 @@
   &__icon:not(:empty) {
     display: flex;
 
-    &>img,
-    &>svg {
+    & > img,
+    & > svg {
       height: auto;
       object-fit: contain;
     }
@@ -69,12 +69,12 @@
     }
 
     .@{prefix}-button__icon:not(:empty) {
-      &+.@{prefix}-button__text:not(:empty) {
+      & + .@{prefix}-button__text:not(:empty) {
         margin-left: var(--bu-button-large-icon-gap);
       }
 
-      &>img,
-      &>svg {
+      & > img,
+      & > svg {
         width: var(--bu-button-large-icon-size);
       }
     }
@@ -91,12 +91,12 @@
     }
 
     .@{prefix}-button__icon:not(:empty) {
-      &+.@{prefix}-button__text:not(:empty) {
+      & + .@{prefix}-button__text:not(:empty) {
         margin-left: var(--bu-button-medium-icon-gap);
       }
 
-      &>img,
-      &>svg {
+      & > img,
+      & > svg {
         width: var(--bu-button-medium-icon-size);
       }
     }
@@ -113,12 +113,12 @@
     }
 
     .@{prefix}-button__icon:not(:empty) {
-      &+.@{prefix}-button__text:not(:empty) {
+      & + .@{prefix}-button__text:not(:empty) {
         margin-left: var(--bu-button-small-icon-gap);
       }
 
-      &>img,
-      &>svg {
+      & > img,
+      & > svg {
         width: var(--bu-button-small-icon-size);
       }
     }
@@ -135,12 +135,12 @@
     }
 
     .@{prefix}-button__icon:not(:empty) {
-      &+.@{prefix}-button__text:not(:empty) {
+      & + .@{prefix}-button__text:not(:empty) {
         margin-left: var(--bu-button-mini-icon-gap);
       }
 
-      &>img,
-      &>svg {
+      & > img,
+      & > svg {
         width: var(--bu-button-mini-icon-size);
       }
     }
@@ -157,12 +157,12 @@
     }
 
     .@{prefix}-button__icon:not(:empty) {
-      &+.@{prefix}-button__text:not(:empty) {
+      & + .@{prefix}-button__text:not(:empty) {
         margin-left: var(--bu-button-tiny-icon-gap);
       }
 
-      &>img,
-      &>svg {
+      & > img,
+      & > svg {
         width: var(--bu-button-tiny-icon-size);
       }
     }
@@ -183,7 +183,7 @@
     width: 100%;
   }
 
-  &[class*="--disabled"] {
+  &[class*='--disabled'] {
     cursor: not-allowed;
   }
 }

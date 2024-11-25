@@ -100,7 +100,7 @@
   --td-font-gray-2: rgba(0, 0, 0, 0.6);
   --td-font-gray-3: rgba(0, 0, 0, 0.4);
   --td-font-gray-4: rgba(0, 0, 0, 0.26);
-  --ld-main-color:#0052d9;
+  --ld-main-color: #0052d9;
   --ld-main-color-light: rgba(181, 199, 255, 0.204);
 
   --td-brand-color: var(--ld-main-color);
@@ -160,8 +160,10 @@
   --td-component-stroke: var(--td-gray-color-3);
   --td-border-level-2-color: var(--td-gray-color-4);
   --td-component-border: var(--td-gray-color-4);
-  --td-shadow-1: 0 1px 10px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 8%), 0 2px 4px -1px rgba(0, 0, 0, 12%);
-  --td-shadow-2: 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 8px 10px 1px rgba(0, 0, 0, 6%), 0 5px 5px -3px rgba(0, 0, 0, 10%);
+  --td-shadow-1: 0 1px 10px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 8%),
+    0 2px 4px -1px rgba(0, 0, 0, 12%);
+  --td-shadow-2: 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 8px 10px 1px rgba(0, 0, 0, 6%),
+    0 5px 5px -3px rgba(0, 0, 0, 10%);
   --td-shadow-3: 0 6px 30px 5px rgba(0, 0, 0, 0.05), 0 16px 24px 2px rgba(0, 0, 0, 4%),
     0 8px 10px -5px rgba(0, 0, 0, 8%);
   --td-shadow-inset-top: inset 0 0.5px 0 #dcdcdc;
@@ -293,9 +295,12 @@
   --td-component-stroke: var(--td-gray-color-11);
   --td-border-level-2-color: var(--td-gray-color-9);
   --td-component-border: var(--td-gray-color-9);
-  --td-shadow-1: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);
-  --td-shadow-2: 0 8px 10px rgba(0, 0, 0, 0.12), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%);
-  --td-shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);
+  --td-shadow-1: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 8%),
+    0 2px 4px rgba(0, 0, 0, 12%);
+  --td-shadow-2: 0 8px 10px rgba(0, 0, 0, 0.12), 0 3px 14px rgba(0, 0, 0, 10%),
+    0 5px 5px rgba(0, 0, 0, 16%);
+  --td-shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%),
+    0 8px 10px rgba(0, 0, 0, 20%);
   --td-shadow-inset-top: inset 0 0.5px 0 #5e5e5e;
   --td-shadow-inset-right: inset 0.5px 0 0 #5e5e5e;
   --td-shadow-inset-bottom: inset 0 -0.5px 0 #5e5e5e;
@@ -349,28 +354,38 @@
   --td-line-height-headline-large: 44px;
   --td-line-height-display-medium: 56px;
   --td-line-height-display-large: 72px;
-  --td-font-link-small: var(--td-font-size-link-small) / var(--td-line-height-link-small) var(--td-font-family);
-  --td-font-link-medium: var(--td-font-size-link-medium) / var(--td-line-height-link-medium) var(--td-font-family);
-  --td-font-link-large: var(--td-font-size-link-large) / var(--td-line-height-link-large) var(--td-font-family);
-  --td-font-mark-small: 600 var(--td-font-size-mark-small) / var(--td-line-height-mark-small) var(--td-font-family);
-  --td-font-mark-medium: 600 var(--td-font-size-mark-medium) / var(--td-line-height-mark-medium) var(--td-font-family);
-  --td-font-body-small: var(--td-font-size-body-small) / var(--td-line-height-body-small) var(--td-font-family);
-  --td-font-body-medium: var(--td-font-size-body-medium) / var(--td-line-height-body-medium) var(--td-font-family);
-  --td-font-body-large: var(--td-font-size-body-large) / var(--td-line-height-body-large) var(--td-font-family);
-  --td-font-title-small: 600 var(--td-font-size-title-small) / var(--td-line-height-title-small) var(--td-font-family);
+  --td-font-link-small: var(--td-font-size-link-small) / var(--td-line-height-link-small)
+    var(--td-font-family);
+  --td-font-link-medium: var(--td-font-size-link-medium) / var(--td-line-height-link-medium)
+    var(--td-font-family);
+  --td-font-link-large: var(--td-font-size-link-large) / var(--td-line-height-link-large)
+    var(--td-font-family);
+  --td-font-mark-small: 600 var(--td-font-size-mark-small) / var(--td-line-height-mark-small)
+    var(--td-font-family);
+  --td-font-mark-medium: 600 var(--td-font-size-mark-medium) / var(--td-line-height-mark-medium)
+    var(--td-font-family);
+  --td-font-body-small: var(--td-font-size-body-small) / var(--td-line-height-body-small)
+    var(--td-font-family);
+  --td-font-body-medium: var(--td-font-size-body-medium) / var(--td-line-height-body-medium)
+    var(--td-font-family);
+  --td-font-body-large: var(--td-font-size-body-large) / var(--td-line-height-body-large)
+    var(--td-font-family);
+  --td-font-title-small: 600 var(--td-font-size-title-small) / var(--td-line-height-title-small)
+    var(--td-font-family);
   --td-font-title-medium: 600 var(--td-font-size-title-medium) / var(--td-line-height-title-medium)
     var(--td-font-family);
-  --td-font-title-large: 600 var(--td-font-size-title-large) / var(--td-line-height-title-large) var(--td-font-family);
-  --td-font-headline-small: 600 var(--td-font-size-headline-small) / var(--td-line-height-headline-small)
+  --td-font-title-large: 600 var(--td-font-size-title-large) / var(--td-line-height-title-large)
     var(--td-font-family);
-  --td-font-headline-medium: 600 var(--td-font-size-headline-medium) / var(--td-line-height-headline-medium)
-    var(--td-font-family);
-  --td-font-headline-large: 600 var(--td-font-size-headline-large) / var(--td-line-height-headline-large)
-    var(--td-font-family);
-  --td-font-display-medium: 600 var(--td-font-size-display-medium) / var(--td-line-height-display-medium)
-    var(--td-font-family);
-  --td-font-display-large: 600 var(--td-font-size-display-large) / var(--td-line-height-display-large)
-    var(--td-font-family);
+  --td-font-headline-small: 600 var(--td-font-size-headline-small) /
+    var(--td-line-height-headline-small) var(--td-font-family);
+  --td-font-headline-medium: 600 var(--td-font-size-headline-medium) /
+    var(--td-line-height-headline-medium) var(--td-font-family);
+  --td-font-headline-large: 600 var(--td-font-size-headline-large) /
+    var(--td-line-height-headline-large) var(--td-font-family);
+  --td-font-display-medium: 600 var(--td-font-size-display-medium) /
+    var(--td-line-height-display-medium) var(--td-font-family);
+  --td-font-display-large: 600 var(--td-font-size-display-large) /
+    var(--td-line-height-display-large) var(--td-font-family);
 }
 :root {
   --td-size-1: 2px;
