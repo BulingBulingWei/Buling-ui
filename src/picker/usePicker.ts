@@ -82,7 +82,7 @@ export const usePicker = (props: any, emit: any) => {
     } else if (columnsType.value === 'multiple') {
       result = formattedColumns.value
     } else {
-      result = formatCascade(formattedColumns.value, defaultValues.value)
+      result = formatCascade(formattedColumns.value, defaultValues.value || [])
     }
 
     return result

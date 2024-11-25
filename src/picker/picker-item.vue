@@ -66,15 +66,12 @@ const state = reactive({
   itemHeight: 0 // 每一个选项的高度
 })
 
-// 当前索引
-// const currIndex = computed(() => {
-//   return Math.floor((maxScrollTop.value - state.deltaY) / state.itemHeight)
-// })
-
+const maxScrollTop = ref(0)
+const minScrollTop = ref(0)
 const miniDeceleratingSpeed: number = 4
-
 const positions = ref<any[]>([]) // 记录位置和时间，用于计算惯性滚动的起始速度
 
+// 获取选项高度
 const getOptionHeight = () => {
   const firstItem = content.value?.children?.[0]
   if (firstItem) {
@@ -88,20 +85,28 @@ onMounted(() => {
 })
 
 // 获取滚动区间
-const maxScrollTop = computed(() => {
-  if (content.value) {
-    return Math.floor(Number(props.visibleOptionNum) / 2) * state.itemHeight
-  }
-  return 0
-})
-// 获取滚动区间
-const minScrollTop = computed(() => {
+const getRollingRange = () => {
   if (content.value) {
     const height = parseFloat(getComputedStyle(content.value).height)
-    return -height + (Math.floor(Number(props.visibleOptionNum) / 2) + 1) * state.itemHeight
+    maxScrollTop.value = Math.floor(Number(props.visibleOptionNum) / 2) * state.itemHeight
+    minScrollTop.value =
+      -height + (Math.floor(Number(props.visibleOptionNum) / 2) + 1) * state.itemHeight
   }
-  return 0
+}
+
+// 监听content 高度变化，重新计算滚动区间
+const observer = new ResizeObserver(() => {
+  getRollingRange()
 })
+
+watch(
+  () => content.value,
+  () => {
+    if (content.value) {
+      observer.observe(content.value)
+    }
+  }
+)
 
 // 监听maxScrollTop的变化，更新目前所选择的选项所在的位置，adjustPosition方法里面用到maxScrollTop.value
 watch(
@@ -137,7 +142,9 @@ watch(
   () => props.value,
   () => {
     if (props.value !== undefined) {
-      let index = props.column.findIndex((item) => item.value + '' === props.value + '')
+      let index = props.column.findIndex(
+        (item) => item[props.fieldNames.value] + '' === props.value + ''
+      )
       if (index === -1) index = 0
       adjustPosition(index, 'index')
     }
@@ -190,11 +197,10 @@ const setChooseValue = (y?: number) => {
   // 未变化不触发
   if (props.column[currIndex]?.[props.fieldNames.value] === props.value) return
   emits('change', props.column[currIndex])
-  // console.log('change', props.column[currIndex])
 }
 
 // 将元素位置调整回正确的位置
-const adjustPosition = async (y: number, type?: 'position' | 'index', doChange: boolean = true) => {
+const adjustPosition = (y: number, type?: 'position' | 'index', doChange: boolean = true) => {
   let moveY: number = y
   // 直接改变value的值而导致的滚动位置,参数y为要滚动到的值的index
   if (type && type === 'index') {
@@ -202,13 +208,12 @@ const adjustPosition = async (y: number, type?: 'position' | 'index', doChange: 
     const diff = Math.abs(Math.floor((state.deltaY - moveY) / state.itemHeight)) - 1
     let moveTime: number = 200 + diff * 50
     moveTime = Math.min(moveTime, 1200)
-    await updateTransformProxy(moveY, moveTime)
+    updateTransformProxy(moveY, moveTime)
   } else {
     // 触摸滑动而导致的滚动位置
     moveY = Math.round(y / state.itemHeight) * state.itemHeight
-    console.log('moveY', moveY, y, maxScrollTop.value, minScrollTop.value)
     // 开启动画慢慢回到正确位置
-    await updateTransformProxy(moveY, 200)
+    updateTransformProxy(moveY, 200)
   }
   // 触发change事件，更改value
   if (doChange) setChooseValue(moveY)

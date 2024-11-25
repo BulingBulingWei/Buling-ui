@@ -18,7 +18,7 @@
 import { ref } from 'vue'
 import { BuButton } from '@/components'
 const visible = ref(false)
-const data: any = ref(['法师', '扁鹊'])
+const data: any = ref([])
 
 const roles = [
   {
@@ -40,6 +40,14 @@ const roles = [
       {
         name: '狂铁',
         val: '狂铁'
+      },
+      {
+        name: '曹操',
+        val: '曹操'
+      },
+      {
+        name: '赵云',
+        val: '赵云'
       }
     ]
   },
@@ -62,18 +70,122 @@ const roles = [
       {
         name: '嫦娥',
         val: '嫦娥'
+      },
+
+      {
+        name: '貂蝉',
+        val: '貂蝉'
+      },
+      {
+        name: '小乔',
+        val: '小乔'
+      }
+    ]
+  },
+  {
+    name: '辅助',
+    val: '辅助',
+    children: [
+      {
+        name: '孙膑',
+        val: '孙膑'
+      },
+      {
+        name: '蔡文姬',
+        val: '蔡文姬'
+      },
+      {
+        name: '庄周',
+        val: '庄周'
+      },
+      {
+        name: '大乔',
+        val: '大乔'
+      },
+
+      {
+        name: '刘邦',
+        val: '刘邦'
+      },
+      {
+        name: '明世隐',
+        val: '明世隐'
+      }
+    ]
+  },
+  {
+    name: '刺客',
+    val: '刺客',
+    children: [
+      {
+        name: '韩信',
+        val: '韩信'
+      },
+      {
+        name: '兰陵王',
+        val: '兰陵王'
+      },
+      {
+        name: '娜可露露',
+        val: '娜可露露'
+      },
+      {
+        name: '花木兰',
+        val: '花木兰'
+      },
+      {
+        name: '孙悟空',
+        val: '孙悟空'
+      },
+      {
+        name: '李白',
+        val: '李白'
+      }
+    ]
+  },
+  {
+    name: '射手',
+    val: '射手',
+    children: [
+      {
+        name: '狄仁杰',
+        val: '狄仁杰'
+      },
+      {
+        name: '后羿',
+        val: '后羿'
+      },
+      {
+        name: '百里守约',
+        val: '百里守约'
+      },
+      {
+        name: '虞姬',
+        val: '虞姬'
+      },
+      {
+        name: '鲁班七号',
+        val: '鲁班七号'
+      },
+      {
+        name: '孙尚香',
+        val: '孙尚香'
+      },
+      {
+        name: '马可波罗',
+        val: '马可波罗'
       }
     ]
   }
 ]
 
 const confirm = (val: any) => {
-  console.log('confirm', val)
+  alert('已选择：' + val.join(' -- '))
   visible.value = false
 }
 
 const change = (val: any) => {
-  //   console.log('change', val)
+  console.log('change', val)
 }
 </script>
 

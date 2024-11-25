@@ -4,14 +4,19 @@
     <BuButton type="outline" @click="visible2 = true">多项选择</BuButton>
   </div>
   <BuPopup v-model="visible1" placement="bottom" close-on-overlay-click>
-    <BuPicker v-model="option1" :columns="cityOptions"></BuPicker>
+    <BuPicker
+      v-model="option1"
+      :columns="cityOptions"
+      @cancel="visible1 = false"
+      @confirm="confirmHandler"
+    ></BuPicker>
   </BuPopup>
   <BuPopup v-model="visible2" placement="bottom" close-on-overlay-click>
     <BuPicker
       v-model="option2"
       :columns="items"
       @cancel="cancelHandler2"
-      @confirm="confirmHandler"
+      @confirm="confirmHandler2"
       @change="change"
     ></BuPicker>
   </BuPopup>
@@ -58,6 +63,11 @@ const cities = [
 
 const cityOptions = [cities.map((item) => ({ label: item, value: item }))]
 
+const confirmHandler = (val: any) => {
+  alert('你好~' + val)
+  visible1.value = false
+}
+
 const items = ref([
   [
     { label: 'English', value: '1' },
@@ -85,7 +95,7 @@ const items = ref([
   ]
 ])
 
-const confirmHandler = (val, context) => {
+const confirmHandler2 = (val, context) => {
   console.log('confirm', val)
   visible2.value = false
 }
