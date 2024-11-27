@@ -14,7 +14,8 @@
     <BuButton block @click="change">填充按钮</BuButton>
   </div>
   <div class="button-row">
-    <BuButton block content="客服按钮-icon插槽实现，同时文案过多了会单行溢出隐藏" @click="change"> </BuButton>
+    <BuButton block content="客服按钮-icon插槽实现，同时文案过多了会单行溢出隐藏" @click="change">
+    </BuButton>
   </div>
 </template>
 

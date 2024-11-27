@@ -27,7 +27,9 @@ const canRewriteProps = (md, forceRewrite) => {
 }
 
 const canRewriteCss = (md, forceRewrite) => {
-  const ans = md.match(/\|\s*?名称\s*?\|\s*?默认值\s*?\|\s*?描述\s*?\|\n\| -*? \| -*? \| -*? \|\n([\s\S]*?)$/)
+  const ans = md.match(
+    /\|\s*?名称\s*?\|\s*?默认值\s*?\|\s*?描述\s*?\|\n\| -*? \| -*? \| -*? \|\n([\s\S]*?)$/
+  )
   if (!ans || !ans[1]) return md
   if (/[a-zA-Z0-9]/.test(ans[1])) {
     if (forceRewrite) {
@@ -51,7 +53,9 @@ const writeProps = (props, mdPath, forceRewrite) => {
   const res = apiMd.match(/\| -*? \| -*? \| -*? \| -*? \| -*? \|/)
   const insertIndex = res[0].length + res.index
   let propsMd = ``
-  props.forEach((item) => (propsMd += `\n|${item.name}|${item.type}|${item.default}|${item.desc}|N|`))
+  props.forEach(
+    (item) => (propsMd += `\n|${item.name}|${item.type}|${item.default}|${item.desc}|N|`)
+  )
   apiMd = apiMd.slice(0, insertIndex) + propsMd + apiMd.slice(insertIndex)
 
   fs.writeFileSync(mdPath, apiMd)
@@ -90,7 +94,9 @@ const writeCss = (css, mdPath, forceRewrite) => {
   }
 
   apiMd = newMd
-  const res = apiMd.match(/\|\s*?名称\s*?\|\s*?默认值\s*?\|\s*?描述\s*?\|\n\| -*? \| -*? \| -*? \|\n/)
+  const res = apiMd.match(
+    /\|\s*?名称\s*?\|\s*?默认值\s*?\|\s*?描述\s*?\|\n\| -*? \| -*? \| -*? \|\n/
+  )
   const insertIndex = res[0].length + res.index
   let cssMd = ``
   css.forEach((item) => (cssMd += `|${item.name}|${item.value}|${item.desc}|\n`))

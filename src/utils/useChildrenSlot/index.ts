@@ -39,9 +39,16 @@ type OptionType = {
 }
 
 interface TUseChildrenSlot {
-  <T>(childrenVNode: VNode[], vNodeTypeName?: string, options?: OptionType): [VNode<any, any, T>[], (T & { children: any })[]]
+  <T>(childrenVNode: VNode[], vNodeTypeName?: string, options?: OptionType): [
+    VNode<any, any, T>[],
+    (T & { children: any })[]
+  ]
 }
-const useChildrenSlot: TUseChildrenSlot = <T>(childrenVNode: VNode[], vNodeTypeName?: string, options?: OptionType) => {
+const useChildrenSlot: TUseChildrenSlot = <T>(
+  childrenVNode: VNode[],
+  vNodeTypeName?: string,
+  options?: OptionType
+) => {
   const vNodeList: VNode<any, any, T>[] = []
   const children = getChildrenList(childrenVNode)
   const { booleanAttribute = [] } = options || {}

@@ -1,6 +1,6 @@
 ---
 title: Vue3 for Mobile
-description:  适配移动端的组件库，适合在 vue 3 技术栈项目中使用。
+description: 适配移动端的组件库，适合在 vue 3 技术栈项目中使用。
 spline: explain
 ---
 
@@ -20,7 +20,7 @@ pnpm i buling-ui
 
 ## 使用
 
- 提供了两种方式使用组件，具体使用方式如下
+提供了两种方式使用组件，具体使用方式如下
 
 ### 按需引入（推荐）
 

@@ -1,5 +1,5 @@
 :root,
-:root[theme-mode="light"] {
+:root[theme-mode='light'] {
   --header-height: 64px;
   --doc-header-height: 252px;
   --aside-width: 260px;
@@ -13,11 +13,16 @@
   --header-box-shadow: inset 0 -1px 0 #e7e7e7;
   --footer-box-shadow: inset 0 1px 0 #e7e7e7;
   --aside-box-shadow: inset -1px 0 0 #e7e7e7;
-  --portal-box-shadow: inset 1px 0px 0px #dcdcdc, inset -1px 0px 0px #dcdcdc, inset 0px -1px 0px #dcdcdc, inset 0px 1px 0px #dcdcdc;
-  --table-box-shadow: inset 0px 1px 0px #e7e7e7, inset 0px -1px 0px #e7e7e7, inset -1px 0px 0px #e7e7e7, inset 1px 0px 0px #e7e7e7;
-  --shadow-1: 0 1px 10px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 8%), 0 2px 4px -1px rgba(0, 0, 0, 12%);
-  --shadow-2: 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 8px 10px 1px rgba(0, 0, 0, 6%), 0 5px 5px -3px rgba(0, 0, 0, 10%);
-  --shadow-3: 0 6px 30px 5px rgba(0, 0, 0, 0.05), 0 16px 24px 2px rgba(0, 0, 0, 4%), 0 8px 10px -5px rgba(0, 0, 0, 8%);
+  --portal-box-shadow: inset 1px 0px 0px #dcdcdc, inset -1px 0px 0px #dcdcdc,
+    inset 0px -1px 0px #dcdcdc, inset 0px 1px 0px #dcdcdc;
+  --table-box-shadow: inset 0px 1px 0px #e7e7e7, inset 0px -1px 0px #e7e7e7,
+    inset -1px 0px 0px #e7e7e7, inset 1px 0px 0px #e7e7e7;
+  --shadow-1: 0 1px 10px rgba(0, 0, 0, 0.05), 0 4px 5px rgba(0, 0, 0, 8%),
+    0 2px 4px -1px rgba(0, 0, 0, 12%);
+  --shadow-2: 0 3px 14px 2px rgba(0, 0, 0, 0.05), 0 8px 10px 1px rgba(0, 0, 0, 6%),
+    0 5px 5px -3px rgba(0, 0, 0, 10%);
+  --shadow-3: 0 6px 30px 5px rgba(0, 0, 0, 0.05), 0 16px 24px 2px rgba(0, 0, 0, 4%),
+    0 8px 10px -5px rgba(0, 0, 0, 8%);
   --shadow-inset-top: inset 0 0.5px 0 #dcdcdc;
   --shadow-inset-right: inset 0.5px 0 0 #dcdcdc;
   --shadow-inset-bottom: inset 0 -0.5px 0 #dcdcdc;
@@ -108,34 +113,39 @@
 }
 @media screen and (max-width: 960px) {
   :root,
-  :root[theme-mode="light"] {
+  :root[theme-mode='light'] {
     --content-padding-right: 0;
   }
 }
 @media screen and (min-width: 1200px) {
   :root,
-  :root[theme-mode="light"] {
+  :root[theme-mode='light'] {
     --content-padding-left-right: 48px;
   }
 }
 @media screen and (min-width: 1920px) {
   :root,
-  :root[theme-mode="light"] {
+  :root[theme-mode='light'] {
     --content-max-width: 1200px;
   }
 }
-:root[theme-mode="dark"] {
+:root[theme-mode='dark'] {
   background: var(--bg-color-page);
   --theme-block-light-display: none;
   --theme-block-dark-display: block;
   --header-box-shadow: inset 0 -1px 0 #4b4b4b;
   --footer-box-shadow: inset 0 1px 0 #4b4b4b;
   --aside-box-shadow: inset -1px 0 0 #4b4b4b;
-  --portal-box-shadow: inset 1px 0px 0px #5e5e5e, inset -1px 0px 0px #5e5e5e, inset 0px -1px 0px #5e5e5e, inset 0px 1px 0px #5e5e5e;
-  --table-box-shadow: inset 0px 1px 0px #4b4b4b, inset 0px -1px 0px #4b4b4b, inset -1px 0px 0px #4b4b4b, inset 1px 0px 0px #4b4b4b;
-  --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 8%), 0 2px 4px rgba(0, 0, 0, 12%);
-  --shadow-2: 0 8px 10px rgba(0, 0, 0, 0.12), 0 3px 14px rgba(0, 0, 0, 10%), 0 5px 5px rgba(0, 0, 0, 16%);
-  --shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%), 0 8px 10px rgba(0, 0, 0, 20%);
+  --portal-box-shadow: inset 1px 0px 0px #5e5e5e, inset -1px 0px 0px #5e5e5e,
+    inset 0px -1px 0px #5e5e5e, inset 0px 1px 0px #5e5e5e;
+  --table-box-shadow: inset 0px 1px 0px #4b4b4b, inset 0px -1px 0px #4b4b4b,
+    inset -1px 0px 0px #4b4b4b, inset 1px 0px 0px #4b4b4b;
+  --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 8%),
+    0 2px 4px rgba(0, 0, 0, 12%);
+  --shadow-2: 0 8px 10px rgba(0, 0, 0, 0.12), 0 3px 14px rgba(0, 0, 0, 10%),
+    0 5px 5px rgba(0, 0, 0, 16%);
+  --shadow-3: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 12%),
+    0 8px 10px rgba(0, 0, 0, 20%);
   --shadow-inset-top: inset 0 0.5px 0 #5e5e5e;
   --shadow-inset-right: inset 0.5px 0 0 #5e5e5e;
   --shadow-inset-bottom: inset 0 -0.5px 0 #5e5e5e;
@@ -182,7 +192,7 @@
   --text-placeholder: rgba(255, 255, 255, 0.35);
   --text-disabled: rgba(255, 255, 255, 0.22);
   --text-anti: #fff;
-  --text-interactive: #4582E6;
+  --text-interactive: #4582e6;
   --brand-main: #4582e6;
   --brand-main-hover: #2667d4;
   --brand-main-focus: #173463;
@@ -210,7 +220,7 @@
   --bg-color-theme-radio: #424242;
   --bg-color-theme-radio-active: #5e5e5e;
 }
-:root[theme-mode="dark"] img {
+:root[theme-mode='dark'] img {
   filter: brightness(0.85);
 }
 html,
@@ -303,7 +313,14 @@ p {
   left: 0;
   width: 100%;
   height: 4px;
-  background: repeating-linear-gradient(to right, #0062fa 0%, #ffbd2e 25%, #ff454f 50%, #ffbd2e 75%, #0062fa 100%);
+  background: repeating-linear-gradient(
+    to right,
+    #0062fa 0%,
+    #ffbd2e 25%,
+    #ff454f 50%,
+    #ffbd2e 75%,
+    #0062fa 100%
+  );
   background-size: 200% auto;
   background-position: 0 100%;
   animation: gradient 6s infinite;
@@ -348,35 +365,35 @@ p {
   position: absolute;
 }
 :root .__light__,
-:root[theme-mode="light"] .__light__ {
+:root[theme-mode='light'] .__light__ {
   display: block;
 }
 :root .__dark__,
-:root[theme-mode="light"] .__dark__ {
+:root[theme-mode='light'] .__dark__ {
   display: none;
 }
-:root[theme-mode="dark"] .__light__ {
+:root[theme-mode='dark'] .__light__ {
   display: none;
 }
-:root[theme-mode="dark"] .__dark__ {
+:root[theme-mode='dark'] .__dark__ {
   display: block;
 }
-div[name="DOC"] img,
-div[name="API"] img,
-div[name="DESIGN"] img {
+div[name='DOC'] img,
+div[name='API'] img,
+div[name='DESIGN'] img {
   max-width: 100%;
   margin: 16px 0 8px;
 }
-div[name="DOC"] em,
-div[name="API"] em,
-div[name="DESIGN"] em {
+div[name='DOC'] em,
+div[name='API'] em,
+div[name='DESIGN'] em {
   font-size: 12px;
   line-height: 20px;
 }
-div[name="DOC"] blockquote,
-div[name="DEMO"] blockquote,
-div[name="API"] blockquote,
-div[name="DESIGN"] blockquote {
+div[name='DOC'] blockquote,
+div[name='DEMO'] blockquote,
+div[name='API'] blockquote,
+div[name='DESIGN'] blockquote {
   display: block;
   overflow: auto;
   border-left: 2px solid var(--component-border);
@@ -385,38 +402,38 @@ div[name="DESIGN"] blockquote {
   padding: 12px 12px 12px 24px;
   margin: 16px 0;
 }
-div[name="DOC"] > ul:not([class]) li,
-div[name="DEMO"] > ul:not([class]) li,
-div[name="API"] > ul:not([class]) li,
-div[name="DESIGN"] > ul:not([class]) li,
-div[name="DOC"] > ol:not([class]) li,
-div[name="DEMO"] > ol:not([class]) li,
-div[name="API"] > ol:not([class]) li,
-div[name="DESIGN"] > ol:not([class]) li {
+div[name='DOC'] > ul:not([class]) li,
+div[name='DEMO'] > ul:not([class]) li,
+div[name='API'] > ul:not([class]) li,
+div[name='DESIGN'] > ul:not([class]) li,
+div[name='DOC'] > ol:not([class]) li,
+div[name='DEMO'] > ol:not([class]) li,
+div[name='API'] > ol:not([class]) li,
+div[name='DESIGN'] > ol:not([class]) li {
   margin-top: 4px;
 }
-div[name="DOC"] > h5:not([class]),
-div[name="DEMO"] > h5:not([class]),
-div[name="API"] > h5:not([class]),
-div[name="DESIGN"] > h5:not([class]) {
+div[name='DOC'] > h5:not([class]),
+div[name='DEMO'] > h5:not([class]),
+div[name='API'] > h5:not([class]),
+div[name='DESIGN'] > h5:not([class]) {
   font-weight: 500;
 }
-div[name="DOC"] > p:not([class]),
-div[name="DEMO"] > p:not([class]),
-div[name="API"] > p:not([class]),
-div[name="DESIGN"] > p:not([class]) {
+div[name='DOC'] > p:not([class]),
+div[name='DEMO'] > p:not([class]),
+div[name='API'] > p:not([class]),
+div[name='DESIGN'] > p:not([class]) {
   margin: 16px 0 8px;
 }
-div[name="DOC"] > :first-child,
-div[name="DEMO"] > :first-child,
-div[name="API"] > :first-child,
-div[name="DESIGN"] > :first-child {
+div[name='DOC'] > :first-child,
+div[name='DEMO'] > :first-child,
+div[name='API'] > :first-child,
+div[name='DESIGN'] > :first-child {
   margin-top: 0;
 }
-div[name="DOC"] pre,
-div[name="DEMO"] pre,
-div[name="API"] pre,
-div[name="DESIGN"] pre {
+div[name='DOC'] pre,
+div[name='DEMO'] pre,
+div[name='API'] pre,
+div[name='DESIGN'] pre {
   color: var(--text-primary);
   padding: 20px 24px;
   border-radius: 6px;
@@ -425,39 +442,39 @@ div[name="DESIGN"] pre {
   overflow: auto;
   position: relative;
 }
-div[name="DOC"] pre:hover::-webkit-scrollbar-thumb,
-div[name="DEMO"] pre:hover::-webkit-scrollbar-thumb,
-div[name="API"] pre:hover::-webkit-scrollbar-thumb,
-div[name="DESIGN"] pre:hover::-webkit-scrollbar-thumb {
+div[name='DOC'] pre:hover::-webkit-scrollbar-thumb,
+div[name='DEMO'] pre:hover::-webkit-scrollbar-thumb,
+div[name='API'] pre:hover::-webkit-scrollbar-thumb,
+div[name='DESIGN'] pre:hover::-webkit-scrollbar-thumb {
   background-color: var(--bg-color-scroll);
 }
-div[name="DOC"] pre::-webkit-scrollbar-corner,
-div[name="DEMO"] pre::-webkit-scrollbar-corner,
-div[name="API"] pre::-webkit-scrollbar-corner,
-div[name="DESIGN"] pre::-webkit-scrollbar-corner {
+div[name='DOC'] pre::-webkit-scrollbar-corner,
+div[name='DEMO'] pre::-webkit-scrollbar-corner,
+div[name='API'] pre::-webkit-scrollbar-corner,
+div[name='DESIGN'] pre::-webkit-scrollbar-corner {
   width: 0;
 }
-div[name="DOC"] pre::-webkit-scrollbar,
-div[name="DEMO"] pre::-webkit-scrollbar,
-div[name="API"] pre::-webkit-scrollbar,
-div[name="DESIGN"] pre::-webkit-scrollbar {
+div[name='DOC'] pre::-webkit-scrollbar,
+div[name='DEMO'] pre::-webkit-scrollbar,
+div[name='API'] pre::-webkit-scrollbar,
+div[name='DESIGN'] pre::-webkit-scrollbar {
   width: 12px;
   height: 12px;
   background-color: transparent;
 }
-div[name="DOC"] pre::-webkit-scrollbar-thumb,
-div[name="DEMO"] pre::-webkit-scrollbar-thumb,
-div[name="API"] pre::-webkit-scrollbar-thumb,
-div[name="DESIGN"] pre::-webkit-scrollbar-thumb {
+div[name='DOC'] pre::-webkit-scrollbar-thumb,
+div[name='DEMO'] pre::-webkit-scrollbar-thumb,
+div[name='API'] pre::-webkit-scrollbar-thumb,
+div[name='DESIGN'] pre::-webkit-scrollbar-thumb {
   border-radius: 6px;
   border: 4px solid transparent;
   background-clip: content-box;
   background-color: transparent;
 }
-div[name="DOC"] *:not(pre) > code,
-div[name="DEMO"] *:not(pre) > code,
-div[name="API"] *:not(pre) > code,
-div[name="DESIGN"] *:not(pre) > code {
+div[name='DOC'] *:not(pre) > code,
+div[name='DEMO'] *:not(pre) > code,
+div[name='API'] *:not(pre) > code,
+div[name='DESIGN'] *:not(pre) > code {
   margin: 0 2px;
   color: var(--error-8);
   background: var(--error-1);
@@ -466,28 +483,28 @@ div[name="DESIGN"] *:not(pre) > code {
   font-size: 12px;
   word-break: break-word;
 }
-div[name="DOC"] code,
-div[name="DEMO"] code,
-div[name="API"] code,
-div[name="DESIGN"] code,
-div[name="DOC"] code *,
-div[name="DEMO"] code *,
-div[name="API"] code *,
-div[name="DESIGN"] code * {
+div[name='DOC'] code,
+div[name='DEMO'] code,
+div[name='API'] code,
+div[name='DESIGN'] code,
+div[name='DOC'] code *,
+div[name='DEMO'] code *,
+div[name='API'] code *,
+div[name='DESIGN'] code * {
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
 }
-div[name="DOC"] a:not([class]),
-div[name="DEMO"] a:not([class]),
-div[name="API"] a:not([class]),
-div[name="DESIGN"] a:not([class]) {
+div[name='DOC'] a:not([class]),
+div[name='DEMO'] a:not([class]),
+div[name='API'] a:not([class]),
+div[name='DESIGN'] a:not([class]) {
   line-height: 24px;
   text-decoration: none;
   color: var(--text-interactive);
 }
-div[name="DOC"] > table,
-div[name="DEMO"] > table,
-div[name="API"] > table,
-div[name="DESIGN"] > table {
+div[name='DOC'] > table,
+div[name='DEMO'] > table,
+div[name='API'] > table,
+div[name='DESIGN'] > table {
   width: 100%;
   background: var(--bg-color-table);
   border-radius: 6px;
@@ -496,106 +513,106 @@ div[name="DESIGN"] > table {
   margin: 16px 0;
   box-shadow: var(--table-box-shadow);
 }
-div[name="DOC"] > table thead,
-div[name="DEMO"] > table thead,
-div[name="API"] > table thead,
-div[name="DESIGN"] > table thead {
+div[name='DOC'] > table thead,
+div[name='DEMO'] > table thead,
+div[name='API'] > table thead,
+div[name='DESIGN'] > table thead {
   background: var(--bg-color-tag);
   font-weight: normal;
 }
-div[name="DOC"] > table thead th,
-div[name="DEMO"] > table thead th,
-div[name="API"] > table thead th,
-div[name="DESIGN"] > table thead th {
+div[name='DOC'] > table thead th,
+div[name='DEMO'] > table thead th,
+div[name='API'] > table thead th,
+div[name='DESIGN'] > table thead th {
   border: 0;
 }
-div[name="DOC"] > table thead tr:hover,
-div[name="DEMO"] > table thead tr:hover,
-div[name="API"] > table thead tr:hover,
-div[name="DESIGN"] > table thead tr:hover {
+div[name='DOC'] > table thead tr:hover,
+div[name='DEMO'] > table thead tr:hover,
+div[name='API'] > table thead tr:hover,
+div[name='DESIGN'] > table thead tr:hover {
   background: var(--bg-color-tag);
 }
-div[name="DOC"] > table tr,
-div[name="DEMO"] > table tr,
-div[name="API"] > table tr,
-div[name="DESIGN"] > table tr {
+div[name='DOC'] > table tr,
+div[name='DEMO'] > table tr,
+div[name='API'] > table tr,
+div[name='DESIGN'] > table tr {
   transition: all 0.2s;
 }
-div[name="DOC"] > table tr:hover,
-div[name="DEMO"] > table tr:hover,
-div[name="API"] > table tr:hover,
-div[name="DESIGN"] > table tr:hover {
+div[name='DOC'] > table tr:hover,
+div[name='DEMO'] > table tr:hover,
+div[name='API'] > table tr:hover,
+div[name='DESIGN'] > table tr:hover {
   background-color: var(--bg-color-table-hover);
 }
-div[name="DOC"] > table td:first-child,
-div[name="DEMO"] > table td:first-child,
-div[name="API"] > table td:first-child,
-div[name="DESIGN"] > table td:first-child {
+div[name='DOC'] > table td:first-child,
+div[name='DEMO'] > table td:first-child,
+div[name='API'] > table td:first-child,
+div[name='DESIGN'] > table td:first-child {
   font-weight: bold;
 }
-div[name="DOC"] > table td:nth-child(1),
-div[name="DEMO"] > table td:nth-child(1),
-div[name="API"] > table td:nth-child(1),
-div[name="DESIGN"] > table td:nth-child(1) {
+div[name='DOC'] > table td:nth-child(1),
+div[name='DEMO'] > table td:nth-child(1),
+div[name='API'] > table td:nth-child(1),
+div[name='DESIGN'] > table td:nth-child(1) {
   font-weight: bold;
 }
-div[name="DOC"] > table td:nth-child(4),
-div[name="DEMO"] > table td:nth-child(4),
-div[name="API"] > table td:nth-child(4),
-div[name="DESIGN"] > table td:nth-child(4) {
+div[name='DOC'] > table td:nth-child(4),
+div[name='DEMO'] > table td:nth-child(4),
+div[name='API'] > table td:nth-child(4),
+div[name='DESIGN'] > table td:nth-child(4) {
   word-break: break-all;
 }
-div[name="DOC"] > table th,
-div[name="DEMO"] > table th,
-div[name="API"] > table th,
-div[name="DESIGN"] > table th,
-div[name="DOC"] > table td,
-div[name="DEMO"] > table td,
-div[name="API"] > table td,
-div[name="DESIGN"] > table td {
+div[name='DOC'] > table th,
+div[name='DEMO'] > table th,
+div[name='API'] > table th,
+div[name='DESIGN'] > table th,
+div[name='DOC'] > table td,
+div[name='DEMO'] > table td,
+div[name='API'] > table td,
+div[name='DESIGN'] > table td {
   padding: 16px;
   line-height: 22px;
   text-align: left;
   font-size: 14px;
   border-bottom: 1px solid var(--component-stroke);
 }
-div[name="DOC"] > table th,
-div[name="DEMO"] > table th,
-div[name="API"] > table th,
-div[name="DESIGN"] > table th {
+div[name='DOC'] > table th,
+div[name='DEMO'] > table th,
+div[name='API'] > table th,
+div[name='DESIGN'] > table th {
   white-space: nowrap;
 }
-div[name="DOC"] nav + h1,
-div[name="DEMO"] nav + h1,
-div[name="API"] nav + h1,
-div[name="DESIGN"] nav + h1,
-div[name="DOC"] nav + h2,
-div[name="DEMO"] nav + h2,
-div[name="API"] nav + h2,
-div[name="DESIGN"] nav + h2,
-div[name="DOC"] nav + h3,
-div[name="DEMO"] nav + h3,
-div[name="API"] nav + h3,
-div[name="DESIGN"] nav + h3,
-div[name="DOC"] nav + h4,
-div[name="DEMO"] nav + h4,
-div[name="API"] nav + h4,
-div[name="DESIGN"] nav + h4 {
+div[name='DOC'] nav + h1,
+div[name='DEMO'] nav + h1,
+div[name='API'] nav + h1,
+div[name='DESIGN'] nav + h1,
+div[name='DOC'] nav + h2,
+div[name='DEMO'] nav + h2,
+div[name='API'] nav + h2,
+div[name='DESIGN'] nav + h2,
+div[name='DOC'] nav + h3,
+div[name='DEMO'] nav + h3,
+div[name='API'] nav + h3,
+div[name='DESIGN'] nav + h3,
+div[name='DOC'] nav + h4,
+div[name='DEMO'] nav + h4,
+div[name='API'] nav + h4,
+div[name='DESIGN'] nav + h4 {
   margin-top: 0;
 }
-div[name="DOC"] > h1,
-div[name="DEMO"] > h1,
-div[name="API"] > h1,
-div[name="DESIGN"] > h1 {
+div[name='DOC'] > h1,
+div[name='DEMO'] > h1,
+div[name='API'] > h1,
+div[name='DESIGN'] > h1 {
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
   margin-bottom: 24px;
 }
-div[name="DOC"] > h2,
-div[name="DEMO"] > h2,
-div[name="API"] > h2,
-div[name="DESIGN"] > h2 {
+div[name='DOC'] > h2,
+div[name='DEMO'] > h2,
+div[name='API'] > h2,
+div[name='DESIGN'] > h2 {
   font-weight: bold;
   font-size: 28px;
   line-height: 36px;
@@ -604,16 +621,16 @@ div[name="DESIGN"] > h2 {
   align-items: center;
 }
 
-div[name="DOC"] > h2:hover a,
-div[name="DEMO"] > h2:hover a,
-div[name="API"] > h2:hover a,
-div[name="DESIGN"] > h2:hover a {
+div[name='DOC'] > h2:hover a,
+div[name='DEMO'] > h2:hover a,
+div[name='API'] > h2:hover a,
+div[name='DESIGN'] > h2:hover a {
   opacity: 1;
 }
-div[name="DOC"] > h3,
-div[name="DEMO"] > h3,
-div[name="API"] > h3,
-div[name="DESIGN"] > h3 {
+div[name='DOC'] > h3,
+div[name='DEMO'] > h3,
+div[name='API'] > h3,
+div[name='DESIGN'] > h3 {
   font-weight: bold;
   font-size: 20px;
   line-height: 28px;
@@ -622,16 +639,16 @@ div[name="DESIGN"] > h3 {
   align-items: center;
 }
 
-div[name="DOC"] > h3:hover a,
-div[name="DEMO"] > h3:hover a,
-div[name="API"] > h3:hover a,
-div[name="DESIGN"] > h3:hover a {
+div[name='DOC'] > h3:hover a,
+div[name='DEMO'] > h3:hover a,
+div[name='API'] > h3:hover a,
+div[name='DESIGN'] > h3:hover a {
   opacity: 1;
 }
-div[name="DOC"] > h4,
-div[name="DEMO"] > h4,
-div[name="API"] > h4,
-div[name="DESIGN"] > h4 {
+div[name='DOC'] > h4,
+div[name='DEMO'] > h4,
+div[name='API'] > h4,
+div[name='DESIGN'] > h4 {
   font-size: 16px;
   line-height: 24px;
   margin: 32px 0 8px;
@@ -640,54 +657,54 @@ div[name="DESIGN"] > h4 {
   align-items: center;
 }
 
-div[name="DOC"] > h4:hover a,
-div[name="DEMO"] > h4:hover a,
-div[name="API"] > h4:hover a,
-div[name="DESIGN"] > h4:hover a {
+div[name='DOC'] > h4:hover a,
+div[name='DEMO'] > h4:hover a,
+div[name='API'] > h4:hover a,
+div[name='DESIGN'] > h4:hover a {
   opacity: 1;
 }
-div[name="DOC"] > h5,
-div[name="DEMO"] > h5,
-div[name="API"] > h5,
-div[name="DESIGN"] > h5 {
+div[name='DOC'] > h5,
+div[name='DEMO'] > h5,
+div[name='API'] > h5,
+div[name='DESIGN'] > h5 {
   font-size: 14px;
   line-height: 22px;
   margin: 8px 0 16px;
   font-weight: normal;
 }
-div[name="DOC"] > h5 .tdesign-header-anchor,
-div[name="DEMO"] > h5 .tdesign-header-anchor,
-div[name="API"] > h5 .tdesign-header-anchor,
-div[name="DESIGN"] > h5 .tdesign-header-anchor,
-div[name="DOC"] > h5 .header-anchor,
-div[name="DEMO"] > h5 .header-anchor,
-div[name="API"] > h5 .header-anchor,
-div[name="DESIGN"] > h5 .header-anchor {
+div[name='DOC'] > h5 .tdesign-header-anchor,
+div[name='DEMO'] > h5 .tdesign-header-anchor,
+div[name='API'] > h5 .tdesign-header-anchor,
+div[name='DESIGN'] > h5 .tdesign-header-anchor,
+div[name='DOC'] > h5 .header-anchor,
+div[name='DEMO'] > h5 .header-anchor,
+div[name='API'] > h5 .header-anchor,
+div[name='DESIGN'] > h5 .header-anchor {
   display: none;
 }
-div[name="DOC"] > p,
-div[name="DEMO"] > p,
-div[name="API"] > p,
-div[name="DESIGN"] > p {
+div[name='DOC'] > p,
+div[name='DEMO'] > p,
+div[name='API'] > p,
+div[name='DESIGN'] > p {
   font-size: 14px;
   line-height: 22px;
   color: var(--text-primary);
 }
-div[name="DOC"] hr,
-div[name="DEMO"] hr,
-div[name="API"] hr,
-div[name="DESIGN"] hr {
+div[name='DOC'] hr,
+div[name='DEMO'] hr,
+div[name='API'] hr,
+div[name='DESIGN'] hr {
   opacity: 0;
   margin: 16px 0;
 }
-div[name="DOC"] .tdesign-header-anchor,
-div[name="DEMO"] .tdesign-header-anchor,
-div[name="API"] .tdesign-header-anchor,
-div[name="DESIGN"] .tdesign-header-anchor,
-div[name="DOC"] .header-anchor,
-div[name="DEMO"] .header-anchor,
-div[name="API"] .header-anchor,
-div[name="DESIGN"] .header-anchor {
+div[name='DOC'] .tdesign-header-anchor,
+div[name='DEMO'] .tdesign-header-anchor,
+div[name='API'] .tdesign-header-anchor,
+div[name='DESIGN'] .tdesign-header-anchor,
+div[name='DOC'] .header-anchor,
+div[name='DEMO'] .header-anchor,
+div[name='API'] .header-anchor,
+div[name='DESIGN'] .header-anchor {
   text-decoration: none;
   transition: opacity 0.3s;
   opacity: 0;
@@ -757,35 +774,35 @@ div[name="DESIGN"] .header-anchor {
   color: var(--brand-main);
   border-left: 1px solid var(--brand-main);
 }
-div[name="DESIGN"] h5 + .legend {
+div[name='DESIGN'] h5 + .legend {
   margin-top: -16px;
 }
-div[name="DESIGN"] img {
+div[name='DESIGN'] img {
   display: block;
   border-radius: 6px;
   border: 1px solid var(--component-border);
 }
-div[name="DESIGN"] img.tag {
+div[name='DESIGN'] img.tag {
   margin: 0;
   width: 25%;
   max-width: 60px;
   border: 0;
 }
-div[name="DESIGN"] .legend {
+div[name='DESIGN'] .legend {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
 }
-div[name="DESIGN"] .legend .item {
+div[name='DESIGN'] .legend .item {
   width: calc(50% - 12px);
 }
-div[name="DOC"] image {
+div[name='DOC'] image {
   margin: 0;
   border-radius: 6px;
   border: 1px solid var(--component-stroke);
 }
-div[name="DOC"] h3 .tag {
+div[name='DOC'] h3 .tag {
   color: var(--text-secondary);
   padding: 0 12px;
   border-radius: 3px;
@@ -796,35 +813,35 @@ div[name="DOC"] h3 .tag {
   font-size: 16px;
   font-weight: 600;
 }
-div[name="DOC"] .image-group {
+div[name='DOC'] .image-group {
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 16px;
 }
-div[name="DOC"] .image-wrapper {
+div[name='DOC'] .image-wrapper {
   background: var(--bg-color-code);
   border-radius: 6px;
   padding: 12px;
   box-sizing: border-box;
 }
 @media screen and (min-width: 1440px) {
-  div[name="DOC"] .image-wrapper {
+  div[name='DOC'] .image-wrapper {
     width: calc((100% - 48px) / 4);
   }
 }
 @media screen and (min-width: 750px) and (max-width: 1439px) {
-  div[name="DOC"] .image-wrapper {
+  div[name='DOC'] .image-wrapper {
     width: calc((100% - 32px) / 3);
   }
 }
 @media screen and (max-width: 749px) {
-  div[name="DOC"] .image-wrapper {
+  div[name='DOC'] .image-wrapper {
     width: calc((100% - 16px) / 2);
   }
 }
-div[name="DOC"] .image-wrapper .item {
+div[name='DOC'] .image-wrapper .item {
   background: var(--bg-color-card);
   border-radius: 3px;
   padding: 12px 16px;
@@ -833,23 +850,25 @@ div[name="DOC"] .image-wrapper .item {
   box-sizing: border-box;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.24s cubic-bezier(0.38, 0, 0.24, 1), box-shadow 0.24s linear, opacity 0.24s linear;
+  transition: transform 0.24s cubic-bezier(0.38, 0, 0.24, 1), box-shadow 0.24s linear,
+    opacity 0.24s linear;
 }
-div[name="DOC"] .image-wrapper .item:hover {
+div[name='DOC'] .image-wrapper .item:hover {
   color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0px 6px 30px 5px rgba(0, 0, 0, 0.05), 0px 16px 24px 2px rgba(0, 0, 0, 0.04), 0px 8px 10px -5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 6px 30px 5px rgba(0, 0, 0, 0.05), 0px 16px 24px 2px rgba(0, 0, 0, 0.04),
+    0px 8px 10px -5px rgba(0, 0, 0, 0.08);
 }
-div[name="DOC"] .image-wrapper .item:hover .name {
+div[name='DOC'] .image-wrapper .item:hover .name {
   color: var(--text-primary);
 }
-div[name="DOC"] .image-wrapper .item img {
+div[name='DOC'] .image-wrapper .item img {
   margin: 8px 0;
   max-width: 100%;
   height: auto;
   filter: none;
 }
-div[name="DOC"] .image-wrapper .item .name {
+div[name='DOC'] .image-wrapper .item .name {
   line-height: 22px;
   color: var(--text-secondary);
   text-overflow: ellipsis;
@@ -857,12 +876,12 @@ div[name="DOC"] .image-wrapper .item .name {
   white-space: pre;
   transition: all 0.2s linear;
 }
-div[name="DOC"].timeline {
+div[name='DOC'].timeline {
   padding-left: 32px;
   position: relative;
   overflow: hidden;
 }
-div[name="DOC"].timeline::after {
+div[name='DOC'].timeline::after {
   content: '';
   position: absolute;
   top: 24px;
@@ -871,11 +890,11 @@ div[name="DOC"].timeline::after {
   height: 100%;
   background: var(--brand-main);
 }
-div[name="DOC"].timeline h2 {
+div[name='DOC'].timeline h2 {
   position: relative;
 }
-div[name="DOC"].timeline h2 td-code,
-div[name="DOC"].timeline h2 code {
+div[name='DOC'].timeline h2 td-code,
+div[name='DOC'].timeline h2 code {
   padding: 2px 12px;
   border-radius: 3px;
   background: var(--bg-color-tag);
@@ -883,7 +902,7 @@ div[name="DOC"].timeline h2 code {
   color: var(--text-primary);
   font-size: 20px;
 }
-div[name="DOC"].timeline h2::before {
+div[name='DOC'].timeline h2::before {
   content: '';
   position: absolute;
   left: -32px;
@@ -896,7 +915,7 @@ div[name="DOC"].timeline h2::before {
   border-radius: 50%;
   z-index: 10;
 }
-div[name="DOC"].timeline h2:last-of-type::after {
+div[name='DOC'].timeline h2:last-of-type::after {
   content: '';
   position: absolute;
   top: 30px;
@@ -906,7 +925,7 @@ div[name="DOC"].timeline h2:last-of-type::after {
   height: 9999px;
   background: var(--bg-color-docpage);
 }
-div[name="DOC"].timeline h3 {
+div[name='DOC'].timeline h3 {
   font-size: 20px;
   line-height: 28px;
 }

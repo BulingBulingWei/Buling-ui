@@ -10,10 +10,7 @@
     "jest": true,
     "es6": true
   },
-  "plugins": [
-    "vue",
-    "@typescript-eslint"
-  ],
+  "plugins": ["vue", "@typescript-eslint"],
   "globals": {
     "cy": "readonly",
     "Cypress": "readonly",
@@ -31,23 +28,13 @@
     }
   },
   "settings": {
-    "import/extensions": [
-      ".js",
-      ".jsx",
-      ".ts",
-      ".tsx"
-    ]
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
   },
   "rules": {
     "no-console": [
       "error",
       {
-        "allow": [
-          "log",
-          "info",
-          "warn",
-          "error"
-        ]
+        "allow": ["log", "info", "warn", "error"]
       }
     ],
     // code style config
@@ -99,21 +86,13 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.vue"
-      ],
+      "files": ["*.vue"],
       "rules": {
         "vue/require-default-prop": 0
       }
     },
     {
-      "files": [
-        "script/**/*",
-        "script/*",
-        "*.js",
-        "site/**/*",
-        "site/*"
-      ],
+      "files": ["script/**/*", "script/*", "*.js", "site/**/*", "site/*"],
       "rules": {
         "no-var-requires": 0,
         "no-console": 0,
@@ -122,18 +101,13 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
+      "files": ["*.ts", "*.tsx"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": 0
       }
     },
     {
-      "files": [
-        "*.test.js"
-      ],
+      "files": ["*.test.js"],
       "rules": {
         "import/no-dynamic-require": "off",
         "global-require": "off"

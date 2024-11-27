@@ -149,10 +149,19 @@ function customRender({ source, file, md }) {
   apiMd = apiMd.replace(/`[^`]+`/g, (str) => str.replace(/\|/g, '\\|'))
 
   if (pageData.isComponent) {
-    mdSegment.demoMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${demoMd.replace(/<!--[\s\S]+?-->/g, '')}`).html
-    mdSegment.apiMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${apiMd.replace(/<!--[\s\S]+?-->/g, '')}`).html
+    mdSegment.demoMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${demoMd.replace(/<!--[\s\S]+?-->/g, '')}`
+    ).html
+    mdSegment.apiMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${apiMd.replace(/<!--[\s\S]+?-->/g, '')}`
+    ).html
   } else {
-    mdSegment.docMd = md.render.call(md, `${pageData.toc ? '[toc]\n' : ''}${content.replace(/<!--[\s\S]+?-->/g, '')}`).html
+    mdSegment.docMd = md.render.call(
+      md,
+      `${pageData.toc ? '[toc]\n' : ''}${content.replace(/<!--[\s\S]+?-->/g, '')}`
+    ).html
   }
 
   // 移动端路由地址

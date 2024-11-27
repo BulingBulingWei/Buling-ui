@@ -26,7 +26,8 @@ function getDocsRoutes(docs: any[]): RouteRecordRaw[] {
         path: `/${item.name}`,
         name: item.name,
         meta: { title: item.title },
-        component: demoModules[`../../src/${item.isHook ? 'hooks/' : ''}${item.name}/demos/mobile.vue`]
+        component:
+          demoModules[`../../src/${item.isHook ? 'hooks/' : ''}${item.name}/demos/mobile.vue`]
       })
     }
   })

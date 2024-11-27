@@ -4,7 +4,15 @@ import { TUseCountDownProps, TUseCountDown } from './type'
 import { getRemainTimes, getShowTimes, getScreenFps } from './utils'
 
 export function useCountDown(props: TUseCountDownProps): TUseCountDown {
-  const { time = 0, autoStart, millisecond = false, format = 'HH:mm:ss', splitWithUnit = false, onFinish, onChange } = props || {}
+  const {
+    time = 0,
+    autoStart,
+    millisecond = false,
+    format = 'HH:mm:ss',
+    splitWithUnit = false,
+    onFinish,
+    onChange
+  } = props || {}
   // state
   const fps = ref()
   const count = ref(Number(time))
@@ -25,7 +33,9 @@ export function useCountDown(props: TUseCountDownProps): TUseCountDown {
       const times = getRemainTimes(count.value)
       onChange?.(times)
       count.value === 0 && onFinish?.()
-      getShowTimes(times, format, millisecond, splitWithUnit)?.forEach?.((i, idx) => (showTimes[idx].value = i?.value))
+      getShowTimes(times, format, millisecond, splitWithUnit)?.forEach?.(
+        (i, idx) => (showTimes[idx].value = i?.value)
+      )
     },
     { immediate: autoStart }
   )
