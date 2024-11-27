@@ -98,6 +98,12 @@ export default [
         name: 'empty',
         path: '/components/empty',
         component: () => import('@/empty/empty.md')
+      },
+      {
+        title: 'Space 间距',
+        name: 'space',
+        path: '/components/space',
+        component: () => import('@/space/space.md')
       }
     ]
   },

@@ -1,0 +1,38 @@
+@import './mixin.less';
+
+.@{prefix}-space {
+  display: inline-flex;
+
+  &-fill {
+    display: flex;
+  }
+
+  &-row {
+    flex-direction: row;
+
+    .@{prefix}-space-item {
+      &:not(:last-child) {
+        margin-right: var(--bu-space-gap);
+      }
+    }
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+    margin-bottom: calc(-1 * var(--bu-space-gap));
+
+    .@{prefix}-space-item {
+      margin-bottom: var(--bu-space-gap);
+    }
+  }
+
+  &-column {
+    flex-direction: column;
+
+    .@{prefix}-space-item {
+      &:not(:last-child) {
+        margin-bottom: var(--bu-space-gap);
+      }
+    }
+  }
+}

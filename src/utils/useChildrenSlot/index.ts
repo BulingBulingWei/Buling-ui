@@ -15,7 +15,7 @@ const getChildrenList = (children: VNode[]) => {
 
 const getVNodePropsList = <T>(list: VNode<any, any, T>[], booleanAttribute: string[]) => {
   return list.map((item: any) => {
-    const propsName = Object.keys(item.props)
+    const propsName = Object.keys(item.props ?? {})
 
     const processBooleanProps = (value: boolean | '') => {
       return value === '' || value
