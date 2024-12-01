@@ -1,0 +1,104 @@
+@import './mixin.less';
+
+.@{prefix}-divider {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: var(--bu-divider-color);
+  border-style: solid;
+  border-width: 0;
+  font-size: 24px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.4);
+
+  &-dashed {
+    border-style: dashed;
+  }
+
+  //   水平分割线
+  &-horizontal {
+    flex-direction: row;
+    height: fit-content;
+    .@{prefix}-divider-content {
+      display: block;
+      flex: 0 0 auto;
+      width: fit-content;
+      height: fit-content;
+      margin: 0 10px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      flex: 1;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: inherit;
+      border-top-width: calc(var(--bu-divider-width) * 2);
+      border-color: inherit;
+      border-style: inherit;
+      transform: scaleY(0.5);
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      flex: 1;
+      flex-grow: var(--bu-divider-after-flex-grow);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: inherit;
+      border-top-width: calc(var(--bu-divider-width) * 2);
+      border-color: inherit;
+      border-style: inherit;
+      transform: scaleY(0.5);
+    }
+  }
+
+  //   垂直分割线
+  &-vertical {
+    width: fit-content;
+    flex-direction: column;
+    .@{prefix}-divider-content {
+      display: block;
+      flex: 0 0 auto;
+      width: fit-content;
+      height: fit-content;
+      margin: 8px 0;
+    }
+
+    &::before {
+      margin: 0;
+      content: '';
+      display: block;
+      flex: 1;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: inherit;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      border-left-width: calc(var(--bu-divider-width) * 2);
+      border-color: inherit;
+      border-style: inherit;
+      transform: scaleX(0.5);
+    }
+
+    &::after {
+      margin: 0;
+      display: block;
+      content: '';
+      flex: 1;
+      flex-grow: var(--bu-divider-after-flex-grow);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: inherit;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      border-left-width: calc(var(--bu-divider-width) * 2);
+      border-color: inherit;
+      border-style: inherit;
+      transform: scaleX(0.5);
+    }
+  }
+}
