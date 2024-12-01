@@ -51,6 +51,12 @@ export default [
         name: 'sticky',
         path: '/components/sticky',
         component: () => import('@/sticky/sticky.md')
+      },
+      {
+        title: 'Divider 分割符',
+        name: 'divider',
+        path: '/components/divider',
+        component: () => import('@/divider/divider.md')
       }
     ]
   },

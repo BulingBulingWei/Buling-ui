@@ -9,3 +9,4 @@ export { default as BuPopup, PopupToolBar as BuPopupToolBar, type PopupProps } f
 export { default as BuOverlay, type OverlayProps } from './overlay'
 export { default as BuSpace, type SpaceProps } from './space'
 export { default as BuForm, FormItem as BuFormItem, type FormProps } from './form'
+export { default as BuDivider, type DividerProps } from './divider'
