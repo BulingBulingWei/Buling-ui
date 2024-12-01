@@ -68,6 +68,12 @@ export default [
         name: 'picker',
         path: '/components/picker',
         component: () => import('@/picker/picker.md')
+      },
+      {
+        title: 'Form 表单',
+        name: 'form',
+        path: '/components/form',
+        component: () => import('@/form/form.md')
       }
     ]
   },

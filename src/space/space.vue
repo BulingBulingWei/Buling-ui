@@ -23,6 +23,10 @@ const computedChildren = computed(() => {
   return children
 })
 
+onMounted(() => {
+  console.log('slots.default?.()', slots.default?.())
+})
+
 const spaceClass = computed(() => [
   `${name}`,
   `${name}-${props.direction}`,
