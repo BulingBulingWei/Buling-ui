@@ -1,0 +1,129 @@
+@import './mixin.less';
+
+.@{prefix}-radio {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  background: var(--bu-radio-bg-color);
+
+  &--disabled {
+    cursor: not-allowed;
+    .@{prefix}-radio-label {
+      color: var(--bu-radio-label-disabled-color);
+    }
+  }
+
+  &--block {
+    display: flex;
+    padding: var(--bu-radio-vertical-padding) var(--bu-radio-horizontal-padding);
+    box-sizing: border-box;
+
+    // 下边的分割线
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: calc(100% - var(--bu-radio-horizontal-padding) * 2);
+      height: 2px;
+      transform: scaleY(0.5);
+      background-color: var(--bu-color-disabled);
+    }
+  }
+
+  &--card {
+    overflow: hidden;
+    border-radius: var(--bu-radio-card-border-radius);
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-label {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 48px;
+    color: var(--bu-radio-label-color);
+  }
+
+  &-desc {
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--bu-radio-description-color);
+
+    &:not(:empty) {
+      margin-top: 8px;
+    }
+  }
+
+  &-icon {
+    margin-left: 16px;
+    margin-right: 0px;
+
+    svg {
+      font-size: var(--bu-radio-icon-size);
+      display: block;
+    }
+  }
+
+  &--buft {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    .@{prefix}-radio-icon {
+      margin-left: 0px;
+      margin-right: 16px;
+    }
+  }
+
+  &--borderless {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.@{prefix}-radio-group {
+  &--card {
+    overflow: hidden;
+    border-radius: var(--bu-radio-card-border-radius);
+  }
+
+  &--gap-card {
+    .@{prefix}-radio {
+      border-radius: var(--bu-radio-card-border-radius);
+      overflow: hidden;
+
+      &:not(:nth-last-child(1)) {
+        margin-bottom: var(--bu-radio-card-gap);
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &--sub-gap-card {
+    .@{prefix}-radio {
+      padding: 20px var(--bu-radio-horizontal-padding);
+      border-radius: var(--bu-radio-card-border-radius);
+      background: var(--bu-radio-sub-gap-card-bg-color);
+      overflow: hidden;
+
+      &:not(:nth-last-child(1)) {
+        margin-bottom: var(--bu-radio-card-gap);
+      }
+
+      &-label {
+        color: var(--bu-radio-sub-gap-card-label-color);
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

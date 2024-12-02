@@ -80,6 +80,12 @@ export default [
         name: 'form',
         path: '/components/form',
         component: () => import('@/form/form.md')
+      },
+      {
+        title: 'Radio 单选框',
+        name: 'radio',
+        path: '/components/radio',
+        component: () => import('@/radio/radio.md')
       }
     ]
   },

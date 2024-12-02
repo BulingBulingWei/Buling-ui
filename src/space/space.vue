@@ -23,9 +23,9 @@ const computedChildren = computed(() => {
   return children
 })
 
-onMounted(() => {
-  console.log('slots.default?.()', slots.default?.())
-})
+// onMounted(() => {
+//   console.log('slots.default?.()', slots.default?.())
+// })
 
 const spaceClass = computed(() => [
   `${name}`,
