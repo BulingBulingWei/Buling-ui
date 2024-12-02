@@ -73,6 +73,7 @@ const propsStyle = computed(() => {
 // popup弹出动画是否结束，保证在动画未结束前点击蒙层无法关闭
 const popupLoaded = ref(false)
 
+// 点击遮罩触发取消事件
 const overlayClickHandler = (dom: Element) => {
   if (!popupLoaded.value) {
     console.log('popup动画未结束')
