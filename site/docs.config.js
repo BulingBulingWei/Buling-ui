@@ -86,6 +86,12 @@ export default [
         name: 'radio',
         path: '/components/radio',
         component: () => import('@/radio/radio.md')
+      },
+      {
+        title: 'CheckBox 复选框',
+        name: 'checkbox',
+        path: '/components/checkbox',
+        component: () => import('@/checkbox/checkbox.md')
       }
     ]
   },
