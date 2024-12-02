@@ -1,6 +1,6 @@
 import { PropType } from 'vue'
 
-export interface TRadioProps {
+export interface TCheckBoxProps {
   /**
    * 是否选中
    * @default: false
@@ -32,27 +32,27 @@ export interface TRadioProps {
    */
   placement: 'left' | 'right'
   /**
-   * 展示卡片样式
+   * 展示卡片类型
    * @default: false
    */
   card: boolean
   /**
-   * 块级元素
+   * 是否为块级
    * @default: true
    */
   block: boolean
   /**
-   * 无边框样式
+   * 无边框模式
    * @default: false
    */
   borderless: boolean
 }
 
-export interface TRadioGroupProps {
-  value: string | number
-  modelValue: string | number
-  defaultValue: string | number
-  options: Partial<TRadioProps>[]
+export interface TCheckBoxGroupProps {
+  value: (string | number)[]
+  modelValue: (string | number)[]
+  defaultValue: (string | number)[]
+  options: Partial<TCheckBoxProps>[]
   disabled: boolean
   type: 'default' | 'card' | 'gap-card' | 'sub-gap-card'
   layout: 'horizontal' | 'vertical'
@@ -78,14 +78,15 @@ export default {
     required: true
   },
   placement: {
-    type: String as PropType<TRadioProps['placement']>,
+    type: String as PropType<TCheckBoxProps['placement']>,
     default: 'right'
   },
   /**
-   * 展示卡片样式
+   * 展示卡片类型
    * @default: false
    */
   card: Boolean,
+  rootGroup: Boolean,
   /**
    * 块级元素
    * @default: true
@@ -95,15 +96,8 @@ export default {
     default: true
   },
   /**
-   * 无边框样式
+   * 无边框模式
    * @default: false
    */
-  borderless: {
-    type: Boolean,
-    default: false
-  },
-  rootGroup: {
-    type: Boolean,
-    default: false
-  }
+  borderless: Boolean
 }

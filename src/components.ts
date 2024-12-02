@@ -11,3 +11,9 @@ export { default as BuSpace, type SpaceProps } from './space'
 export { default as BuForm, FormItem as BuFormItem, type FormProps } from './form'
 export { default as BuDivider, type DividerProps } from './divider'
 export { default as BuRadio, RadioGroup as BuRadioGroup, type RadioProps } from './radio'
+export {
+  default as BuCheckBox,
+  CheckBoxGroup as BuCheckBoxGroup,
+  type CheckBoxProps,
+  type CheckBoxGroupProps
+} from './checkbox'
