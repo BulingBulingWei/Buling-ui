@@ -14,25 +14,25 @@ export default [
         name: 'theme',
         path: '/theme',
         component: () => import('@docs/theme.md')
-      },
-      {
-        title: '字体',
-        name: 'font',
-        path: '/font',
-        component: () => import('@docs/font.md')
-      },
-      {
-        title: 'Icon 图标',
-        name: 'icon',
-        path: '/icon',
-        component: () => import('@docs/icon.md')
-      },
-      {
-        title: '更新日志',
-        name: 'changelog',
-        path: '/changelog',
-        component: () => import('@/../CHANGELOG.md')
       }
+      // {
+      //   title: '字体',
+      //   name: 'font',
+      //   path: '/font',
+      //   component: () => import('@docs/font.md')
+      // },
+      // {
+      //   title: 'Icon 图标',
+      //   name: 'icon',
+      //   path: '/icon',
+      //   component: () => import('@docs/icon.md')
+      // },
+      // {
+      //   title: '更新日志',
+      //   name: 'changelog',
+      //   path: '/changelog',
+      //   component: () => import('@/../CHANGELOG.md')
+      // }
     ]
   },
 
@@ -128,6 +128,12 @@ export default [
         name: 'space',
         path: '/components/space',
         component: () => import('@/space/space.md')
+      },
+      {
+        title: 'List 列表',
+        name: 'list',
+        path: '/components/list',
+        component: () => import('@/list/list.md')
       }
     ]
   },

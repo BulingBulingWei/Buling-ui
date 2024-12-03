@@ -15,6 +15,7 @@ export function getScrollParent(el: Element, root: ScrollElement | undefined = d
 
   while (node && node !== root && isElement(node)) {
     const { overflowY } = window.getComputedStyle(node)
+    // 检测是否有纵向滚动属性
     if (overflowScrollReg.test(overflowY)) {
       return node
     }
