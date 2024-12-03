@@ -17,3 +17,10 @@ export {
   type CheckBoxProps,
   type CheckBoxGroupProps
 } from './checkbox'
+export {
+  default as BuLoading,
+  DarkLoadingIcon as BuDarkLoadingIcon,
+  LightLoadingIcon as BuLightLoadingIcon,
+  useLoading,
+  type LoadingProps
+} from './loading'
