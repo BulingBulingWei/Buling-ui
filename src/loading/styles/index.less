@@ -1,0 +1,64 @@
+@import './mixin.less';
+
+.@{prefix}-loading {
+  &__wrap {
+    opacity: 1;
+
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+    }
+
+    &-enter-active,
+    &-leave-active {
+      transition: opacity var(--bu-overlay-duration) ease;
+    }
+  }
+
+  &__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--bu-loading-text-font-size);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: var(--bu-loading-zindex);
+  }
+
+  &__text {
+    margin-top: var(--bu-loading-icon-gap);
+  }
+
+  &-light {
+    [class$='__text'] {
+      color: var(--bu-loading-light-color);
+    }
+  }
+
+  &-dark {
+    [class$='__text'] {
+      color: var(--bu-loading-dark-color);
+    }
+  }
+}
+
+.@{prefix}-loading-icon {
+  &-dark {
+    fill: var(--bu-theme-color);
+
+    &-mask {
+      fill: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &-light {
+    fill: var(--bu-theme-color);
+
+    &-bg {
+      fill: var(--bu-theme-color);
+      opacity: 0.16;
+    }
+  }
+}

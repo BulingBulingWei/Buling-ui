@@ -146,6 +146,12 @@ export default [
         name: 'overlay',
         path: '/components/overlay',
         component: () => import('@/overlay/overlay.md')
+      },
+      {
+        title: 'Loading 加载中',
+        name: 'loading',
+        path: '/components/loading',
+        component: () => import('@/loading/loading.md')
       }
     ]
   }
