@@ -158,6 +158,12 @@ export default [
         name: 'loading',
         path: '/components/loading',
         component: () => import('@/loading/loading.md')
+      },
+      {
+        title: 'Popover 弹出气泡',
+        name: 'popover',
+        path: '/components/popover',
+        component: () => import('@/popover/popover.md')
       }
     ]
   }

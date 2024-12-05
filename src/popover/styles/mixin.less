@@ -1,0 +1,21 @@
+@import '@/styles/variable.less';
+
+:root {
+  --bu-popover-max-width: 500px; // 最大宽度
+
+  /* 为解决箭头与气泡框的缝隙，相互叠加1px，为避免alpha颜色混合，采用全黑再设置opacity方式 */
+  --bu-popover-bg-color: rgba(0, 0, 0); // 背景颜色
+  --bu-popover-title-color: #fff; // 标题字色
+  --bu-popover-color: #fff; // 内容字色
+  --bu-popover-bg-opacity: 0.7; // 背景透明度
+
+  --bu-popover-arrow-width: 22px; // 箭头的长度
+  --bu-popover-arrow-height: 14px; // 箭头的高度
+
+  --bu-popover-body-padding: 24px; // 浮窗的内边距
+  --bu-popover-gap: 10px; // popover与触发元素的间距
+  --bu-popover-arrow-gap: 18px; // 箭头离最近一条边的边距
+
+  --bu-popover-duration: 300ms; // 动画时间
+  --bu-popover-zIndex: 800; // 层级
+}

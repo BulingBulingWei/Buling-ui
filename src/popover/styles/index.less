@@ -1,0 +1,223 @@
+@import './mixin.less';
+
+.@{prefix}-popover {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+
+  &__trigger {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__body {
+    position: absolute;
+    max-width: var(--bu-popover-max-width);
+    padding: var(--bu-popover-body-padding);
+    box-sizing: border-box;
+    z-index: var(--bu-popover-zIndex);
+    line-height: 1.5;
+
+    &__wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /**
+    * width: max-content 可以实现固定定位宽度自适应
+    */
+
+    &__content {
+      flex: 1;
+      width: max-content;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--bu-popover-title-color);
+    }
+
+    &__message {
+      font-size: 24px;
+      color: var(--bu-popover-color);
+    }
+
+    &__mask {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bu-popover-bg-color);
+      border-radius: var(--bu-popover-border-radius);
+      opacity: var(--bu-popover-bg-opacity);
+      z-index: -10;
+    }
+
+    &__arrow {
+      .@{prefix}-popover-arrow-icon {
+        fill: var(--bu-popover-bg-color);
+      }
+    }
+
+    &__close {
+      margin-right: -10px;
+      margin-left: 14px;
+      cursor: pointer;
+
+      svg {
+        font-size: 40px;
+        display: block;
+      }
+    }
+
+    &__bottom {
+      margin-top: 16px;
+      display: flex;
+      justify-content: flex-end;
+
+      &:empty {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  &__body {
+    &-noarrow {
+      --bu-popover-arrow-height: 0rem;
+    }
+
+    [class$='body__arrow'] {
+      position: absolute;
+      width: var(--bu-popover-arrow-width);
+      height: var(--bu-popover-arrow-height);
+
+      svg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+    /* arrow与mask重合，去除微小间距的安全距离 */
+    @safePadding: 2px;
+
+    /* 气泡框底部与触发组件的间距：箭头高度 + 间距 */
+    @bottomgap: calc(-1 * (var(--bu-popover-arrow-height) + var(--bu-popover-gap)));
+
+    &-top {
+      left: 50%;
+      top: @bottomgap;
+
+      /* 箭头定位到气泡的距离 */
+      @arrowBottom: calc(-1 * var(--bu-popover-arrow-height) + @safePadding);
+
+      [class$='body__arrow'] {
+        left: 50%;
+        bottom: @arrowBottom;
+      }
+
+      &-left {
+        left: 0;
+        top: @bottomgap;
+
+        [class$='body__arrow'] {
+          left: calc(-1 * var(--bu-popover-arrow-width) / 2);
+          bottom: @arrowBottom;
+        }
+      }
+
+      &-right {
+        right: 0%;
+        top: @bottomgap;
+
+        [class$='body__arrow'] {
+          right: calc(-1 * var(--bu-popover-arrow-width) / 2);
+          bottom: @arrowBottom;
+        }
+      }
+    }
+
+    /* 顶部与触发组件的间距：箭头高度 + 间距 */
+    @topgap: calc(-1 * var(--bu-popover-arrow-height) - var(--bu-popover-gap));
+
+    &-bottom {
+      left: 50%;
+      bottom: @topgap;
+
+      @arrowTop: calc(-1 * var(--bu-popover-arrow-height) + @safePadding);
+
+      [class$='body__arrow'] {
+        left: 50%;
+        top: @arrowTop;
+      }
+
+      &-left {
+        left: 0;
+        bottom: @topgap;
+
+        [class$='body__arrow'] {
+          left: calc(-1 * var(--bu-popover-arrow-width) / 2);
+          top: @arrowTop;
+        }
+      }
+
+      &-right {
+        right: 0%;
+        bottom: @topgap;
+
+        [class$='body__arrow'] {
+          right: calc(-1 * var(--bu-popover-arrow-width) / 2);
+          top: @arrowTop;
+        }
+      }
+    }
+
+    &-left {
+      top: 50%;
+      left: 0;
+      /* 箭头高度 + 间距 */
+      @leftgap: calc(-1 * (var(--bu-popover-arrow-height) + var(--bu-popover-gap)));
+      transform: translate(-100%, -50%) translateX(@leftgap);
+
+      [class$='body__arrow'] {
+        right: 0px;
+        top: 50%;
+        transform-origin: right bottom;
+        /* 因右下角旋转 90deg 的误差：箭头的长度 - 高度  */
+        @rotateTemp: calc((var(--bu-popover-arrow-width) - var(--bu-popover-arrow-height)));
+        transform: rotate(90deg) translateX(@rotateTemp) translate(-50%, @safePadding);
+      }
+    }
+
+    &-right {
+      top: 50%;
+      left: 100%;
+      /* 箭头高度 + 间距 */
+      @leftgap: calc(var(--bu-popover-arrow-height) + var(--bu-popover-gap));
+      transform: translate(@leftgap, -50%);
+
+      [class$='body__arrow'] {
+        left: 0px;
+        top: 50%;
+        transform-origin: left bottom;
+        /* 因绕左下角旋转 -90deg 的误差：-(箭头的长度 - 高度)  */
+        @rotateTemp: calc(-1 * (var(--bu-popover-arrow-width) - var(--bu-popover-arrow-height)));
+        transform: rotate(-90deg) translateX(@rotateTemp) translate(50%, @safePadding);
+      }
+    }
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: opacity var(--bu-overlay-duration) ease;
+  }
+}

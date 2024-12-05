@@ -25,3 +25,4 @@ export {
   type LoadingProps
 } from './loading'
 export { default as BuList, type ListProps } from './list'
+export { default as BuPopover, type PopoverProps } from './popover'
