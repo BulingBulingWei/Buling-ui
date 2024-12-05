@@ -4,17 +4,17 @@
 
 ### Button Props
 
-| 名称     | 类型                                                                 | 默认值    | 说明                                                                                                                                   | 必传 |
-| -------- | -------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| block    | boolean                                                              | `false`   | 是否为块级元素                                                                                                                         | N    |
-| disabled | boolean                                                              | `false`   | 禁用状态                                                                                                                               | N    |
-| circle   | boolean                                                              | `true`    | 按钮圆角                                                                                                                               | N    |
-| size     | `large ` &#124; `medium` &#124; `small` &#124; `mini` &#124; ` tiny` | `medium`  | 尺寸，对应设计稿`750`尺寸<p>`large h-96px`</p> <p>`medium h-80px`</p> <p>`small h-56px`</p> <p>`mini h-48px`</p> <p>`tiny h-32px `</p> | N    |
-| type     | `outline ` &#124; `primary` &#124; `text` &#124; ` light`            | `primary` | 按钮类型                                                                                                                               | N    |
-| iconSrc  | string                                                               | -         | 左侧按钮图标                                                                                                                           | N    |
-| content  | string                                                               | -         | 按钮文字内容                                                                                                                           | N    |
-| loading  | boolean                                                              | `false`   | 按钮执行中，不可点击                                                                                                                   | N    |
-| width    | string                                                               | -         | 按钮长度                                                                                                                               | N    |
+| 名称     | 类型                                                                 | 默认值      | 说明                                                                                                                                   | 必传 |
+| -------- | -------------------------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| block    | boolean                                                              | `false`     | 是否为块级元素                                                                                                                         | N    |
+| disabled | boolean                                                              | `false`     | 禁用状态                                                                                                                               | N    |
+| size     | `large ` &#124; `medium` &#124; `small` &#124; `mini` &#124; ` tiny` | `medium`    | 尺寸，对应设计稿`750`尺寸<p>`large h-96px`</p> <p>`medium h-80px`</p> <p>`small h-56px`</p> <p>`mini h-48px`</p> <p>`tiny h-32px `</p> | N    |
+| type     | `outline ` &#124; `primary` &#124; `text` &#124; ` light`            | `primary`   | 按钮类型                                                                                                                               | N    |
+| shape    | `rectangle ` &#124; `square` &#124; `round` &#124; ` circle`         | `rectangle` | 按钮形状，有 4 种：长方形、正方形、圆角长方形、圆形。可选项：rectangle/square/round/circle                                             | N    |
+| iconSrc  | string                                                               | -           | 左侧按钮图标                                                                                                                           | N    |
+| content  | string                                                               | -           | 按钮文字内容                                                                                                                           | N    |
+| loading  | boolean                                                              | `false`     | 按钮执行中，不可点击                                                                                                                   | N    |
+| width    | string                                                               | -           | 按钮长度                                                                                                                               | N    |
 
 ### Button Events
 
@@ -57,6 +57,11 @@
 | --bu-button-small-height                  | 56px                          |                                  |
 | --bu-button-mini-height                   | 48px                          |                                  |
 | --bu-button-tiny-height                   | 32px                          |                                  |
+| --bu-button-large-round-padding           | 3px                           |                                  |
+| --bu-button-medium-round-padding          | 2px                           |                                  |
+| --bu-button-small-round-padding           | 2px                           |                                  |
+| --bu-button-mini-round-padding            | 1px                           |                                  |
+| --bu-button-tiny-round-padding            | 1px                           |                                  |
 | --bu-button-large-font-size               | 32px                          | 文字大小                         |
 | --bu-button-medium-font-size              | 28px                          |                                  |
 | --bu-button-small-font-size               | 24px                          |                                  |

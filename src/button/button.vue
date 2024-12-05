@@ -1,11 +1,5 @@
 <template>
-  <button
-    :class="buttonClass"
-    role="button"
-    :aria-disabled="disabled"
-    :style="{ width }"
-    @click="onClick"
-  >
+  <button :class="buttonClass" role="button" :aria-disabled="disabled" :style="{ width }" @click="onClick">
     <div :class="`${name}__icon`">
       <slot name="icon">
         <img v-if="iconSrc" :src="iconSrc" alt="/" />
@@ -31,11 +25,11 @@ const emits = defineEmits(['click'])
 const buttonClass = computed(() => [
   `${name}`,
   `${name}-${props.type}`,
+  `${name}--${props.shape}`,
   `${name}-size-${props.size}`,
   {
     [`${name}-${props.type}--disabled`]: props.disabled,
-    [`${name}--block`]: props.block,
-    [`${name}--circle`]: props.circle
+    [`${name}--block`]: props.block
   }
 ])
 

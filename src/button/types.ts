@@ -12,11 +12,6 @@ export interface TButtonProps {
    */
   disabled: boolean
   /**
-   * 按钮圆角
-   * @default: true
-   */
-  circle: boolean
-  /**
    * 尺寸，对应设计稿`750`尺寸<p>`large h-96px`</p> <p>`medium h-80px`</p> <p>`small h-56px`</p> <p>`mini h-48px`</p> <p>`tiny h-32px `</p>
    * @default: medium
    */
@@ -26,6 +21,11 @@ export interface TButtonProps {
    * @default: primary
    */
   type: 'outline' | 'primary' | 'text' | 'light'
+  /**
+   * 按钮形状，有 4 种：长方形、正方形、圆角长方形、圆形。可选项：rectangle/square/round/circle
+   * @default: rectangle
+   */
+  shape: 'rectangle' | 'square' | 'round' | 'circle'
   /**
    * 左侧按钮图标
    * @default: -
@@ -60,14 +60,6 @@ export default {
    */
   disabled: Boolean,
   /**
-   * 按钮圆角
-   * @default: true
-   */
-  circle: {
-    type: Boolean,
-    default: true
-  },
-  /**
    * 左侧按钮图标
    * @default: -
    */
@@ -87,6 +79,14 @@ export default {
   type: {
     type: String as PropType<TButtonProps['type']>,
     default: 'primary' as TButtonProps['type']
+  },
+  /**
+   * 按钮形状
+   * @default: -
+   */
+  shape: {
+    type: String as PropType<TButtonProps['shape']>,
+    default: 'rectangle'
   },
   /**
    * 按钮执行中，不可点击

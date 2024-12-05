@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 import { computed, nextTick, reactive, ref, watch, onMounted, PropType } from 'vue'
 import { PickerOption, PickerFieldNames } from './types'
-import { useAnimate } from './useAnimate'
+import useAnimate from './useAnimate'
 import { preventDefault } from '@/utils'
 import config from '../config'
 
@@ -89,8 +89,7 @@ const getRollingRange = () => {
   if (content.value) {
     const height = parseFloat(getComputedStyle(content.value).height)
     maxScrollTop.value = Math.floor(Number(props.visibleOptionNum) / 2) * state.itemHeight
-    minScrollTop.value =
-      -height + (Math.floor(Number(props.visibleOptionNum) / 2) + 1) * state.itemHeight
+    minScrollTop.value = -height + (Math.floor(Number(props.visibleOptionNum) / 2) + 1) * state.itemHeight
   }
 }
 
@@ -113,9 +112,7 @@ watch(
   () => maxScrollTop.value,
   () => {
     if (props.value) {
-      let index = props.column.findIndex(
-        (item) => item[props.fieldNames.value] + '' === props.value + ''
-      )
+      let index = props.column.findIndex((item) => item[props.fieldNames.value] + '' === props.value + '')
       if (index === -1) index = 0
       adjustPosition(index, 'index')
     } else {
@@ -142,9 +139,7 @@ watch(
   () => props.value,
   () => {
     if (props.value !== undefined) {
-      let index = props.column.findIndex(
-        (item) => item[props.fieldNames.value] + '' === props.value + ''
-      )
+      let index = props.column.findIndex((item) => item[props.fieldNames.value] + '' === props.value + '')
       if (index === -1) index = 0
       adjustPosition(index, 'index')
     }

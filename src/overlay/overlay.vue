@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, CSSProperties } from 'vue'
 import OverlayProps from './types'
 import config from '../config'
 import { isNotNil } from '@/utils'
@@ -45,7 +45,7 @@ const touchEmits = (event: 'open' | 'opened' | 'close' | 'closed', dom: Element)
 
 // 计算自定义样式
 const customStyles = computed(() => {
-  const style: Record<string, any> = {}
+  const style: CSSProperties = {}
 
   if (isNotNil(props.zIndex)) {
     style['--bu-overlay-zindex'] = props.zIndex
