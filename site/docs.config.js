@@ -98,6 +98,12 @@ export default [
         name: 'checkbox',
         path: '/components/checkbox',
         component: () => import('@/checkbox/checkbox.md')
+      },
+      {
+        title: 'DatePicker 日期选择器',
+        name: 'datepicker',
+        path: '/components/datepicker',
+        component: () => import('@/datepicker/datepicker.md')
       }
     ]
   },
