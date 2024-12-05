@@ -10,12 +10,7 @@
           @after-leave="(el) => touchEmits('closed', el)"
         >
           <!-- TODO: v-if -->
-          <div
-            v-show="show"
-            :class="contentClass"
-            @click="(e) => e.stopPropagation()"
-            @touchmove.self.prevent.stop
-          >
+          <div v-show="show" :class="contentClass" @click="(e) => e.stopPropagation()" @touchmove.self.prevent.stop>
             <slot></slot>
           </div>
         </Transition>
@@ -25,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, ref, CSSProperties } from 'vue'
 import PopupProps from './types'
 import config from '../config'
 import Overlay from '../overlay'
@@ -38,14 +33,7 @@ const model = defineModel({
   type: Boolean,
   default: false
 })
-const emit = defineEmits([
-  'click-overlay',
-  'close',
-  'closed',
-  'open',
-  'opened',
-  'update:modelValue'
-])
+const emit = defineEmits(['click-overlay', 'close', 'closed', 'open', 'opened', 'update:modelValue'])
 
 const show = computed(() => model.value || props.visible)
 
@@ -60,7 +48,7 @@ const contentClass = computed(() => [
 
 // 计算自定义样式
 const propsStyle = computed(() => {
-  const style: Record<string, any> = {}
+  const style: CSSProperties = {}
   if (isNotNil(props.zIndex)) {
     style['--bu-popup-zindex'] = props.zIndex
   }

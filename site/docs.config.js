@@ -57,6 +57,12 @@ export default [
         name: 'divider',
         path: '/components/divider',
         component: () => import('@/divider/divider.md')
+      },
+      {
+        title: 'Fab 悬浮按钮',
+        name: 'fab',
+        path: '/components/fab',
+        component: () => import('@/fab/fab.md')
       }
     ]
   },

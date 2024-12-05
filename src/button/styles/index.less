@@ -63,9 +63,23 @@
     line-height: var(--bu-button-large-height);
     padding: var(--bu-button-large-padding);
     width: var(--bu-button-large-width);
+    border-radius: var(--bu-button-large-border-radius);
+
+    &.@{prefix}-button--square {
+      width: var(--bu-button-large-height);
+      padding: var(--bu-button-large-round-padding);
+    }
+
+    &.@{prefix}-button--round {
+      border-radius: calc(var(--bu-button-large-height) / 2);
+      min-width: var(--bu-button-large-height);
+    }
 
     &.@{prefix}-button--circle {
-      border-radius: var(--bu-button-large-border-radius);
+      padding: var(--bu-button-large-round-padding);
+      border-radius: 50%;
+      width: var(--bu-button-large-height);
+      max-width: var(--bu-button-large-height);
     }
 
     .@{prefix}-button__icon:not(:empty) {
@@ -85,9 +99,23 @@
     font-size: var(--bu-button-medium-font-size);
     line-height: var(--bu-button-medium-height);
     padding: var(--bu-button-medium-padding);
+    border-radius: var(--bu-button-medium-border-radius);
+
+    &.@{prefix}-button--square {
+      width: var(--bu-button-medium-height);
+      padding: var(--bu-button-medium-round-padding);
+    }
+
+    &.@{prefix}-button--round {
+      border-radius: calc(var(--bu-button-medium-height) / 2);
+      min-width: var(--bu-button-medium-height);
+    }
 
     &.@{prefix}-button--circle {
-      border-radius: var(--bu-button-medium-border-radius);
+      padding: var(--bu-button-medium-round-padding);
+      border-radius: 50%;
+      width: var(--bu-button-medium-height);
+      max-width: var(--bu-button-medium-height);
     }
 
     .@{prefix}-button__icon:not(:empty) {
@@ -107,9 +135,23 @@
     font-size: var(--bu-button-small-font-size);
     line-height: var(--bu-button-small-height);
     padding: var(--bu-button-small-padding);
+    border-radius: var(--bu-button-small-border-radius);
+
+    &.@{prefix}-button--square {
+      width: var(--bu-button-small-height);
+      padding: var(--bu-button-small-round-padding);
+    }
+
+    &.@{prefix}-button--round {
+      border-radius: calc(var(--bu-button-small-height) / 2);
+      min-width: var(--bu-button-small-height);
+    }
 
     &.@{prefix}-button--circle {
-      border-radius: var(--bu-button-small-border-radius);
+      padding: var(--bu-button-small-round-padding);
+      border-radius: 50%;
+      width: var(--bu-button-small-height);
+      max-width: var(--bu-button-small-height);
     }
 
     .@{prefix}-button__icon:not(:empty) {
@@ -129,9 +171,23 @@
     font-size: var(--bu-button-mini-font-size);
     line-height: var(--bu-button-mini-height);
     padding: var(--bu-button-mini-padding);
+    border-radius: var(--bu-button-mini-border-radius);
+
+    &.@{prefix}-button--square {
+      width: var(--bu-button-mini-height);
+      padding: var(--bu-button-mini-round-padding);
+    }
+
+    &.@{prefix}-button--round {
+      border-radius: calc(var(--bu-button-mini-height) / 2);
+      min-width: var(--bu-button-mini-height);
+    }
 
     &.@{prefix}-button--circle {
-      border-radius: var(--bu-button-mini-border-radius);
+      padding: var(--bu-button-mini-round-padding);
+      border-radius: 50%;
+      width: var(--bu-button-mini-height);
+      max-width: var(--bu-button-mini-height);
     }
 
     .@{prefix}-button__icon:not(:empty) {
@@ -151,9 +207,23 @@
     font-size: var(--bu-button-tiny-font-size);
     line-height: var(--bu-button-tiny-height);
     padding: var(--bu-button-tiny-padding);
+    border-radius: var(--bu-button-tiny-border-radius);
+
+    &.@{prefix}-button--square {
+      width: var(--bu-button-tiny-height);
+      padding: var(--bu-button-tiny-round-padding);
+    }
+
+    &.@{prefix}-button--round {
+      border-radius: calc(var(--bu-button-tiny-height) / 2);
+      min-width: var(--bu-button-tiny-height);
+    }
 
     &.@{prefix}-button--circle {
-      border-radius: var(--bu-button-tiny-border-radius);
+      padding: var(--bu-button-tiny-round-padding);
+      border-radius: 50%;
+      width: var(--bu-button-tiny-height);
+      max-width: var(--bu-button-tiny-height);
     }
 
     .@{prefix}-button__icon:not(:empty) {
