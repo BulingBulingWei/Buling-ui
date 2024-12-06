@@ -27,16 +27,18 @@ const name = `${prefix}-datepicker`
 const props = defineProps(DatePickerProps)
 const emits = defineEmits(['cancel', 'confirm', 'update:modelValue', 'change'])
 
-// 标准化日期
+// 标准化日期：先判断是否为正确的日期表示，否则返回默认值，返回值为dayjs对象
 const normalize = (val: string | number, defaultDay: Dayjs) => (val && dayjs(val).isValid() ? dayjs(val) : defaultDay)
 const start = computed(() => normalize(props.start!, dayjs().subtract(10, 'year')))
 
 const end = computed(() => normalize(props.end!, dayjs().add(10, 'year')))
 
+// 是否：不显示年月日只显示时分秒
 const isTimeMode = computed(
   () => Array.isArray(props.mode) && props.mode[0] == null && ['hour', 'minute', 'second'].includes(props.mode[1])
 )
 
+// 合理化：使val在原本设定的区间范围之内
 const rationalize = (val: Dayjs) => {
   if (isTimeMode.value) return val
   if (val.isBefore(start.value)) return start.value
@@ -44,6 +46,7 @@ const rationalize = (val: Dayjs) => {
   return val
 }
 
+// 将字符串或者数字类型表示的日期转为dayjs对象
 const calcDate = (currentValue?: string | number) => {
   if (isTimeMode.value) {
     const dateStr = dayjs(start.value).format('YYYY-MM-DD')

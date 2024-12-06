@@ -46,7 +46,33 @@ const innerButtonProps: ComputedRef<Partial<ButtonProps>> = computed(() => ({
 const fabRef = ref()
 const { height, width } = useElementBounding(fabRef)
 
-const fabStyle = ref<CSSProperties>({})
+// 组件之内统一使用 top 和 left 设置偏移量，这样就可以做到改动偏移位置的时候，
+// fabStyle 中加上 transition 属性就可以有平滑移动的动画效果
+const getOffsset = (val: {
+  left?: number | string
+  right?: number | string
+  top?: number | string
+  bottom?: number | string
+}): CSSProperties => {
+  const style: CSSProperties = {}
+  if (val.bottom) {
+    style.top = `calc(100vh - ${val.bottom} - ${height.value}px)`
+  }
+  if (val.right) {
+    style.left = `calc(100vw - ${val.right} - ${width.value}px)`
+    console.log('style.left', style.left)
+  }
+  if (val.left) {
+    style.left = val.left
+  }
+  if (val.top) {
+    style.top = val.top
+  }
+
+  return style
+}
+
+const fabStyle = ref<CSSProperties>()
 const state = reactive({
   mouseBeforeY: 0,
   mouseBeforeX: 0,
@@ -68,37 +94,36 @@ watch(
   }
 )
 
+// 合理化：使val在原本设定的区间范围之内
+const rationalize = (val: number, type: 'x' | 'y'): number => {
+  if (type === 'y') {
+    return Math.max(Math.min(val, state.maxY), state.miniY)
+  } else {
+    return Math.max(Math.min(val, state.maxX), state.miniX)
+  }
+}
+
 watch(
-  () => props.offset,
-  (val) => {
-    if (val) {
-      const style: CSSProperties = {}
-      if (props.offset) {
-        if (props.offset.bottom) {
-          style.bottom = props.offset.bottom
-        }
-        if (props.offset.right) {
-          style.right = props.offset.right
-        }
-        if (props.offset.left) {
-          style.left = props.offset.left
-        }
-        if (props.offset.top) {
-          style.top = props.offset.top
-        }
-      }
+  () => [props.offset, height.value, width.value],
+  () => {
+    if (props.offset && height.value) {
+      const style: CSSProperties = getOffsset(props.offset)
+      style.transition = 'all 0.3s ease-in-out'
       fabStyle.value = style
+    } else if (height.value) {
+      fabStyle.value = { top: '80vh', left: '80vw' }
     }
   },
   {
-    immediate: true
+    immediate: true,
+    deep: true
   }
 )
 
 const updatePlacement = (style: { top: number; left: number }, smooth?: boolean) => {
   const newStyle: CSSProperties = {}
-  newStyle.top = Math.max(Math.min(style.top, state.maxY), state.miniY) + 'px'
-  newStyle.left = Math.max(Math.min(style.left, state.maxX), state.miniX) + 'px'
+  newStyle.top = rationalize(style.top, 'y') + 'px'
+  newStyle.left = rationalize(style.left, 'x') + 'px'
   if (smooth) {
     newStyle.transition = 'all 0.3s ease-in-out'
   }
@@ -111,7 +136,6 @@ const touchStartHandler = (e: TouchEvent) => {
   if (!props.draggable) return
   state.mouseBeforeY = e.touches[0].clientY
   state.mouseBeforeX = e.touches[0].clientX
-  // console.log('start', top.value, left.value)
 }
 
 const touchMoveHandler = (e: TouchEvent) => {

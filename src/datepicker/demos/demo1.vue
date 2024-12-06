@@ -20,7 +20,7 @@
   <BuDatePicker
     v-model="date"
     format="YYYY-MM-DD"
-    mode="date"
+    mode="hour"
     @change="change"
     @confirm="confirm"
     @cancel="cancel"

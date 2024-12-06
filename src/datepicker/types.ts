@@ -19,7 +19,7 @@ export interface TDatePickerProps {
    */
   end: string | number
   /**
-   * 默认值。
+   * 供选择的时间模式。year = 年；month = 年月；date = 年月日；hour = 年月日时； minute = 年月日时分；当类型为数组时，第一个值控制年月日，第二个值控制时分秒。TMode = 'year' | 'month' | 'date' | 'hour' | 'minute' | 'second'
    * @default: date
    */
   mode: TMode | TMode[]
