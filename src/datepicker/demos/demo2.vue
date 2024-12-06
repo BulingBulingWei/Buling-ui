@@ -6,7 +6,7 @@
     cancel-text="不选了"
     confirm-text="就是你了"
     format="HH:mm"
-    :mode="['hour', 'minute']"
+    :mode="['year', 'minute']"
     @change="change"
     @confirm="confirm"
     @cancel="cancel"
