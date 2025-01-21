@@ -146,6 +146,12 @@ export default [
         name: 'list',
         path: '/components/list',
         component: () => import('@/list/list.md')
+      },
+      {
+        title: 'Grid 宫格',
+        name: 'grid',
+        path: '/components/grid',
+        component: () => import('@/grid/grid.md')
       }
     ]
   },
