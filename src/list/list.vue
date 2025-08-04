@@ -28,16 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  onMounted,
-  ref,
-  computed,
-  watch,
-  nextTick,
-  onUnmounted,
-  onDeactivated,
-  onActivated
-} from 'vue'
+import { onMounted, ref, computed, watch, nextTick, onUnmounted, onDeactivated, onActivated } from 'vue'
 import { LightLoadingIcon } from '@/loading'
 import ListProps from './types'
 import config from '../config'
@@ -77,6 +68,7 @@ const showLoading = ref(false)
 const scroller = ref<HTMLElement>()
 const scrollParent = useScrollParent(scroller)
 
+// 计算一个 DOM 元素相对于页面顶端的垂直距离（top offset）
 const calculateTopPosition = (el: HTMLElement): number => {
   return !el ? 0 : el.offsetTop + calculateTopPosition(el.offsetParent as HTMLElement)
 }
@@ -98,10 +90,7 @@ const isScrollAtBottom = () => {
     const windowScrollTop = getScrollTopRoot()
     if (scroller.value) {
       offsetDistance =
-        calculateTopPosition(scroller.value) +
-        scroller.value.offsetHeight -
-        windowScrollTop -
-        window.innerHeight
+        calculateTopPosition(scroller.value) + scroller.value.offsetHeight - windowScrollTop - window.innerHeight
     }
 
     resScrollTop = windowScrollTop

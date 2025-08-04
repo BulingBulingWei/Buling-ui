@@ -60,7 +60,7 @@ const getOffsset = (val: {
   }
   if (val.right) {
     style.left = `calc(100vw - ${val.right} - ${width.value}px)`
-    console.log('style.left', style.left)
+    // console.log('style.left', style.left)
   }
   if (val.left) {
     style.left = val.left
@@ -94,7 +94,7 @@ watch(
   }
 )
 
-// 合理化：使val在原本设定的区间范围之内
+// 合理化：使val在原本设定的区间范围之内（不可移出可视窗口范围）
 const rationalize = (val: number, type: 'x' | 'y'): number => {
   if (type === 'y') {
     return Math.max(Math.min(val, state.maxY), state.miniY)
@@ -153,10 +153,12 @@ const touchMoveHandler = (e: TouchEvent) => {
 
 const touchEndHandler = (e: TouchEvent) => {
   preventDefault(e, true)
+  // 特殊判断处理click事件
   if (!props.draggable) {
     clickHandler()
     return
   }
+  // 特殊判断处理click事件
   const duration = Date.now() - state.startTime
   if (duration < 150) {
     clickHandler()

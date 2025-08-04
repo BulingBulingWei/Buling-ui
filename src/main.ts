@@ -8,6 +8,6 @@ import 'tdesign-site-components'
 
 const app = createApp(App)
 
-buling.install(app)
+// buling.install(app)
 
-app.use(TDesign).mount('#app')
+app.use(TDesign).use(buling).mount('#app')
