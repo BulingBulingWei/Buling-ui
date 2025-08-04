@@ -43,16 +43,13 @@ const name = `${prefix}-loading`
 
 const props = defineProps(LoadingProps)
 
-const loadingClass = computed(() => [
-  `${name}__content`,
-  `${name}-${props.showOverlay ? 'dark' : 'light'}`
-])
+const loadingClass = computed(() => [`${name}__content`, `${name}-${props.showOverlay ? 'dark' : 'light'}`])
 
 const show = ref(false)
 const timer = ref()
 
 const countDelay = () => {
-  console.log('countDelay', props.delay)
+  // console.log('countDelay', props.delay)
   timer.value = setTimeout(() => {
     show.value = true
     clearTimeout(timer.value)

@@ -9,8 +9,8 @@
           @before-leave="(el) => touchEmits('close', el)"
           @after-leave="(el) => touchEmits('closed', el)"
         >
-          <!-- TODO: v-if -->
-          <div v-show="show" :class="contentClass" @click="(e) => e.stopPropagation()" @touchmove.self.prevent.stop>
+          <!-- 如果使用v-show 动画进入和离开时机可能失效。 -->
+          <div v-if="show" :class="contentClass" @click="(e) => e.stopPropagation()" @touchmove.self.prevent.stop>
             <slot></slot>
           </div>
         </Transition>

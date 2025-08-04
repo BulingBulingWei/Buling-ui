@@ -146,6 +146,12 @@ export default [
         name: 'list',
         path: '/components/list',
         component: () => import('@/list/list.md')
+      },
+      {
+        title: 'CountDown 倒计时',
+        name: 'countdown',
+        path: '/components/countdown',
+        component: () => import('@/countdown/countdown.md')
       }
     ]
   },

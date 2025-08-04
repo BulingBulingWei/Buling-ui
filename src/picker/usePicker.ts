@@ -95,9 +95,7 @@ export const usePicker = (props: any, emit: any) => {
     let columnTmp: PickerOption[] = columns
     for (let i = 0; columnTmp; i++) {
       result.push(columnTmp)
-      let targetIndex: number = columnTmp.findIndex(
-        (item: PickerOption) => item[fields.value] === defaultValues[i]
-      )
+      let targetIndex: number = columnTmp.findIndex((item: PickerOption) => item[fields.value] === defaultValues[i])
       if (targetIndex === -1) targetIndex = 0
       columnTmp = columnTmp[targetIndex][fields.children]
     }
@@ -105,7 +103,7 @@ export const usePicker = (props: any, emit: any) => {
     return result
   }
 
-  // 当前选择的值的indexs列表，根据columnsList计算得出
+  // 当前选择的值的indexs列表，根据columnsList以及defaultValues计算得出
   const defaultIndexs = computed(() => {
     const fields = columnFieldNames.value
     return columnsList.value.map((column: PickerOption[], index: number) => {
@@ -156,9 +154,7 @@ export const usePicker = (props: any, emit: any) => {
   const confirm = () => {
     const fields = columnFieldNames.value
     if (defaultValues.value && !defaultValues.value.length) {
-      defaultValues.value = columnsList.value.map(
-        (column: PickerOption[]) => column[0][fields.value]
-      )
+      defaultValues.value = columnsList.value.map((column: PickerOption[]) => column[0][fields.value])
     }
     emit('confirm', defaultValues.value, selectedOptions.value)
   }

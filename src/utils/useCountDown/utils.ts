@@ -56,8 +56,7 @@ export const fillZero = (num: number, isMillieconds = false): string | number =>
  * @param type
  * @returns
  */
-export const getMark = (format: string, type: string): string =>
-  format?.split?.(type)?.[1]?.split?.('')?.[0]
+export const getMark = (format: string, type: string): string => format?.split?.(type)?.[1]?.split?.('')?.[0]
 
 /**
  * getShowTimes
@@ -108,18 +107,14 @@ export const getShowTimes = (
 }
 
 /**
+ * 在指定的帧数内测量并返回平均帧率（FPS）
  * @param {number} targetCount 不小于1的整数，表示经过targetCount帧之后返回结果
  * @return {Promise<number>}
  */
 export const getScreenFps = (() => {
-  const { requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame } =
-    window as any
+  const { requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame } = window as any
   // 先做一下兼容性处理
-  const nextFrame = [
-    requestAnimationFrame,
-    mozRequestAnimationFrame,
-    webkitRequestAnimationFrame
-  ]?.find?.((fn) => fn)
+  const nextFrame = [requestAnimationFrame, mozRequestAnimationFrame, webkitRequestAnimationFrame]?.find?.((fn) => fn)
   //
   if (!nextFrame) {
     console.error('requestAnimationFrame is not supported!')
